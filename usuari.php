@@ -4,10 +4,7 @@ class Usuari extends DB{
   private $db;
 
   public function __construct(){
-    $this->db = new mysqli(nomServidor,nomUsuari,contrasenya,baseDades);
-    if ($this->db->connect_error) {
-      return "Ha hagut un error amb la base de dades".$this->db->connect_error;
-    }
+    $this->db = getDB();
   }
 
   public function login($correu,$contrasenya){
@@ -16,7 +13,7 @@ class Usuari extends DB{
     $resultatComprovacio = $this->db->query($comprovacio);
     $files = $resultatComprovacio->num_rows;
     if ($files == 0) {
-      echo "No existeix un usuari amb aquest correu assigant";
+      return "No existeix un usuari amb aquest correu assigant";
       exit;
     }
 

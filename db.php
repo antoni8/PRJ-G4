@@ -9,8 +9,10 @@ class DB{
       return "Ha hagut un error amb la base de dades".$this->db->connect_error;
     }
   }
+
+  public function getDB(){
+    return $this->db;
+  }
 }
-
-
 
  ?>
