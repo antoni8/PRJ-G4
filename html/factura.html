@@ -1,0 +1,46 @@
+<HTML>
+<head>
+    <title>Prova I</title>
+    <style>
+    </style>
+    <script src="../java/factura.js"></script>
+</head>
+<body>
+    <H2>ALBARÀ</H2>
+    <h3>INTRODUEIX EL TEU ALBARÀ</h3>
+  <FORM ACTION='' METHOD='GET'>
+    <table border="1" id="demo">
+      <tr><input type="date" name="data">
+      <tr>
+        <td>Referencia</td>
+        <td>Nombre</td>
+        <td>Texto</td>
+        <td>Almacén</td>
+        <td>Cantidad</td>
+        <td>Precio</td>
+        <td>Dto.</td>
+        <td>IVA</td>
+        <td>Importe</td>
+        <!--<td>Tria</td>-->
+      </tr>
+      <tr>
+        <td class="ref"><input type='text' name='referència' autofocus></td>
+        <td><?php echo $nom;?></td>
+        <td><input type='text' name='text' value='[vacío]'></td>
+        <td><input type='text' name='almacen'></td>
+        <td><input type='number' name='quantitat'></td>
+        <td><?php echo $preu;?></td>
+        <td><?php echo $descompte;?></td>
+        <td><?php echo $iva;?></td>
+        <td><?php echo $import;?></td>
+        <!--<td><input type="checkbox" name="check"></td>-->
+      </tr>
+      <tr>
+        <td><button type="button" onclick='addRow()'>Añadir fila</button></td>
+        <td><button type="button" onclick='deleteRow()'>Eliminar fila</button></td>
+      </tr>
+    </table>
+    <input type="submit">
+    </FORM>
+</body>
+</HTML>
