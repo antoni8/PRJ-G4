@@ -4,7 +4,7 @@ class Usuari extends DB{
   private $db;
 
   public function __construct(){
-    $this->db = getDB();
+    $this->db = new DB();
   }
 
   public function comprovar($correu){
