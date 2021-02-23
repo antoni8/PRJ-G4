@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 class Usuari extends DB{
   private $db;
 
@@ -22,6 +24,12 @@ class Usuari extends DB{
     $contrasenya = md5($contrasenya);
     $conBD = "select idUsuari from usuari where correu='$correu' and contrasenya='$contrasenya'";
     $resultatConBD = $this->db->query($conBD);
+    $dades = mysql_fetch_array($resultatConBD);
+    
+    $_SESSION['login'] = true;
+    $_SESSION['id'] = $dades['id'];
+    $_SESSION['nom'] = $dades['nom'];
+    $_SESSION['correu'] = $dades['correu'];
   }
 
   public function registrar($nom,$usuari,$correu,$contrasenya){
