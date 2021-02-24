@@ -4,10 +4,7 @@ class DB{
   protected $db;
 
   public function __construct(){
-    $this->db = new mysqli(localhost,ppmyadmin,Hola,FACTURACIO);
-    if (!$this->db) {
-      echo "Ha hagut un error amb la base de dades";
-    }
+    $this->db = new mysqli('localhost','phpmyadmin','Hola','FACTURACIO');
     return $this->db;
   }
 
