@@ -1,6 +1,6 @@
 <?php
 
-include 'usuari.php';
+include 'classes/usuari.php';
 
 if ($_GET) {
     $DNI = $_GET['dni'];
@@ -9,7 +9,7 @@ if ($_GET) {
     $contrasenya = $_GET['contrasenya'];
     $empresa = $_GET['empresa'];
 
-    $regristar = new Usuari();
+    $registrar = new Usuari();
     
     $registrar->registrar($DNI,$nom,$correu,$contrasenya,$empresa);
 }

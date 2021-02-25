@@ -1,6 +1,6 @@
 <?php
 
-include 'usuari.php';
+include 'classes/usuari.php';
 
 if ($_GET) {
     $correu = $_GET['correu'];
