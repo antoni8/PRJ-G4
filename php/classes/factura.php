@@ -7,8 +7,13 @@ class Factura extends DB{
         parent::__construct();
     }
 
-    public function novaFactura($id,$data,$preuTotal,$NIF){
-
+    public function novaFactura($data,$NIF){
+        $inserir = "insert into FACTURA (Data,NIF_Empresa) values ('$data','$NIF')";
+        if ($this->db->query($inserir) == TRUE) {
+            return "Factura inserida";
+        } else {
+            return "Error".$this->db->error;
+        }
     }
 
     public function borrarFactura($id){

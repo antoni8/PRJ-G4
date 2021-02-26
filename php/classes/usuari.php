@@ -22,6 +22,7 @@ class Usuari extends DB{
   public function login($correu,$contrasenya){
     $this->comprovar($correu);
     if ($this->comprovar($correu) == 0) {
+      return 0;
       exit;
     }
     $contrasenya = md5($contrasenya);
