@@ -42,9 +42,9 @@ class Usuari extends DB{
     $contrasenya = md5($contrasenya);
     $nou = "insert into USUARI (DNI,Nom,Correu,Contrasenya,NIF_Empresa) values ('$DNI','$nom','$correu','$contrasenya','$empresa')";
     if ($this->db->query($nou) == TRUE) {
-      echo "Nova linia inserida";
+      return "Nova linia inserida";
     } else {
-      echo "Error".$nou."<br>".$this->db->error;
+      return "Error".$nou."<br>".$this->db->error;
     }
   }
 
