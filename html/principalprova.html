@@ -4,7 +4,7 @@
    <link rel="stylesheet" href="../css/principal.css">
 </head>
 <body>
- <h1>BENVINGUT A LA NOSTRA APLICACIÓ DE FACTURACIÓ</h1>
+ <h1>BENVINGUT A LA NOSTRA APLICACIO DE FACTURACIO</h1>
  <div style="text-align: center;">
        <button style='background-color: black;width:100%;'>
            <a  href="#registrar">REGISTRAR-SE</a>
@@ -13,47 +13,53 @@
            <a href="#login">LOGIN</a>
        </button>
     </div>
-<div id="registrar" class="modal">
+<div id="registrar" class="registrar">
   <div class="modal-dialog">
     <div class="modal-content">
       <header class="container">
-        <a href="#" class="closebtn">x</a>
+        <a href="principalprova.html" class="closebtn">x</a>
         <h2>REGISTRA'T</h2>
       </header>
       <div class="container">
-        <form action="" method=""> 
-          <input type="text" name="dni" value="Introdueix el teu DNI:"><br> 
-          <input type="text" name="nom" value="Introdueix el teu nom d'usuari:"><br> 
-          <input type="text" name="correu" value="Introdueix el teu correu electrònic:"><br> 
-          <input type="text" name="contrasenya"><br>
-	  <input type="text" name="empresa" ><br> 
-<!--
--DNI
--NOM
--CORREU
--CONTRA
--EMPRESA -->
+        <form action="registrar.php" method="get"> 
+	  Introdueix el teu nom d'usuari:
+          <input type="text" name="nom"><br>
+	  Introdueix el teu DNI: 
+          <input type="email" name="dni"><br> 
+          Introdueix el teu correu electronic:
+	  <input type="text" name="correu"><br> 
+          Introdueix la teva contrasenya:
+          <input type="password" name="contrasenyao" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+	  Confirma la teva contrasenya:
+          <input type="password" name="contrasenyar"><br>
+	  Introdueix la teva empresa:
+	  <input type="text" name="empresa">
       </div>
       <footer class="container">
-        <p>Modal footer</p>
+        <input type="submit" value="REGISTRA'T">
       </footer>
+      </form>
     </div>
   </div>
 </div>
-<div id="login" class="modal">
+<div id="login" class="login">
   <div class="modal-dialog">
     <div class="modal-content">
       <header class="container">
-        <a href="#" class="closebtn">x</a>
-        <h2>Modal Header</h2>
+        <a href="principalprova.html" class="closebtn">x</a>
+        <h2>LOGIN</h2>
       </header>
       <div class="container">
-        <p>Some text in the modal.</p>
-        <p>Some text in the modal.</p>
+        <form action="login.php" method="get">
+          Introdueix el teu nom d'usuari:
+          <input type="text" name="nom"><br>
+          Introdueix la teva contrasenya:
+          <input type="password" name="contrasenya">
       </div>
       <footer class="container">
-        <p>Modal footer</p>
+        <input type="submit" value="ENTRA">
       </footer>
+      </form>
     </div>
   </div>
 </div>
