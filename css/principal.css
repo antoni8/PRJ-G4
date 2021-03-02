@@ -107,7 +107,7 @@ footer {
 }
 
 a:link, a:visited {
-  color: white;
+  color: red;
 }
 @font-face {
   font-family: hola;
@@ -122,7 +122,7 @@ a:link, a:visited {
   src: url(../fonts/raidercrusader/raidercrusadertitle.ttf);
 }
 body{
- background: darkblue url('../fotos/logo.png') no-repeat fixed center;
+ background: url('../fotos/logo.png') no-repeat fixed center;
 }
 h1 {
   font-family: hola;
@@ -136,4 +136,7 @@ input[type=submit] {
   background-color: transparent;
   color: white;
   border-radius: 50%;
+}
+.contacte {
+  text-align: center;
 }

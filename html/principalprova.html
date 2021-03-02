@@ -4,7 +4,8 @@
    <link rel="stylesheet" href="../css/principal.css">
 </head>
 <body>
- <h1>BENVINGUT A LA NOSTRA APLICACIO DE FACTURACIO</h1>
+    <h1>BENVINGUT A LA NOSTRA APLICACIO DE FACTURACIO</h1>
+  <main>
  <div style="text-align: center;">
        <button style='background-color: black;width:100%;'>
            <a  href="#registrar">REGISTRAR-SE</a>
@@ -21,13 +22,13 @@
         <h2>REGISTRA'T</h2>
       </header>
       <div class="container">
-        <form action="registrar.php" method="get"> 
+        <form action="registrar.php" method="get">
 	  Introdueix el teu nom d'usuari:
           <input type="text" name="nom"><br>
-	  Introdueix el teu DNI: 
-          <input type="email" name="dni"><br> 
+	  Introdueix el teu DNI:
+          <input type="email" name="dni"><br>
           Introdueix el teu correu electronic:
-	  <input type="text" name="correu"><br> 
+	  <input type="text" name="correu"><br>
           Introdueix la teva contrasenya:
           <input type="password" name="contrasenyao" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
 	  Confirma la teva contrasenya:
@@ -63,5 +64,10 @@
     </div>
   </div>
 </div>
+<iframe class="factura" width="100%" height="625px" src="../php/factura.php"></iframe>
+</main>
+<footer class="contacte">
+  <p>A&sup2;, SL | Tel. xxxxxxxxx o yyyyyyyyy| email: amatamalas11837@alumnes.iesmanacot.cat o acuevasdela14713@alumnes.iesmanacor.cat</p>
+</footer>
 </body>
 </html>
