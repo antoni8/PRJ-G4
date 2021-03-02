@@ -97,6 +97,7 @@ header {
   background-color: black;
   font-size: 25px;
   color: white;
+  text-align: center;
 }
 
 footer {
@@ -139,4 +140,73 @@ input[type=submit] {
 }
 .contacte {
   text-align: center;
+}
+
+/* nav*/
+* {
+    margin:0px;
+    padding:0px;
+}
+
+/* Donar un marges automàtics i una amplada a les etiquetes amb class=principal */
+.principal {
+	margin:auto;
+	width: 50%;
+}
+
+/* Eliminar l'estil de llista */
+
+ul, ol {
+    list-style:none;
+}
+
+/* Fer que les etiquetes amb class=nav tots els seus li se col·loquin a l'esquerre */
+
+.nav > li {
+    float:left;
+}
+
+/* Fer que totes les etiquetes a que estan dins un li dins class=nav tenguin un fons, color de lletra, no tenguin cap tipo de decoració, pasar-li un padding, que sigui visible i que fagui una transició cap a un color en 0.75 segons */
+.nav li a {
+    background-color:transparent;
+    color: red;
+    text-decoration:none;
+    padding:10px 12px;
+	display:block;
+    transition: color 0.75s;
+}
+
+/* Donar color a tots els a que estiguin dins un li dins l'etiqueta amb class=nav */
+
+.nav li a:hover {
+    color: black;
+}
+
+/* Fer que totes les ul dins els li dins l'etiqueta amb class=nav tengui un color, no aparegui, tengui una posició definida, i un màxim i un mínim d'amplada */
+
+.nav li ul {
+    color: white;
+    display:none;
+	position:absolute;
+	min-width:140px;
+    max-width: 200px;
+}
+
+/* Fer que quan el cursor està damunt un li dins l'etiqueta amb class=nav es mostri l'ul dins del li */
+
+.nav li:hover > ul {
+    display: block;
+}
+
+/* Donar una posició a tots els li que formen part d'algun ul que alhora sigui part d'algun li i que aquest li sigui part de l'etiqueta amb class=nav */
+
+.nav li ul li {
+    position: relative;
+}
+
+/* Col·locar a una posició que volem a tots els ul que són part d'un li que formen part d'algun ul que alhora sigui part d'algun li i que aquest li sigui part de l'etiqueta amb class=nav */
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
 }

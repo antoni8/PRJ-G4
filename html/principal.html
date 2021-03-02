@@ -1,17 +1,120 @@
-<HTML>
+<html>
 <head>
-    <title>BENVINGUT</title>
-    <link rel="stylesheet" type="text/css" href="../css/principal.css"/>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/principal.css">
 </head>
 <body>
-    <h1>BENVINGUT A LA NOSTRA APLICACIÓ DE FACTURACIÓ!</h1>
-    <div style="text-align: center;">
-       <button style='background-color: black;width:100%;'>
-           <a  href="#id01" target="_self">REGISTRAR-SE</a>
-       </button><br>
-       <!--<button style='background-color: black; color: white;width:100%;'>
-           <a href="login.html" target="iframe">LOGIN</a>
-       </button>-->
+	<header>
+    <div id="registrar" class="registrar">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <header class="container">
+            <a href="principalprova.html" class="closebtn">x</a>
+            <h2>REGISTRA'T</h2>
+          </header>
+          <div class="container">
+            <form action="registrar.php" method="get">
+        Introdueix el teu nom d'usuari:
+              <input type="text" name="nom"><br>
+        Introdueix el teu DNI:
+              <input type="email" name="dni"><br>
+              Introdueix el teu correu electronic:
+        <input type="text" name="correu"><br>
+              Introdueix la teva contrasenya:
+              <input type="password" name="contrasenyao" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+        Confirma la teva contrasenya:
+              <input type="password" name="contrasenyar"><br>
+        Introdueix la teva empresa:
+        <input type="text" name="empresa">
+          </div>
+          <footer class="container">
+            <input type="submit" value="REGISTRA'T">
+          </footer>
+          </form>
+        </div>
+      </div>
     </div>
+    <div id="login" class="login">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <header class="container">
+            <a href="principalprova.html" class="closebtn">x</a>
+            <h2>LOGIN</h2>
+          </header>
+          <div class="container">
+            <form action="login.php" method="get">
+              Introdueix el teu nom d'usuari:
+              <input type="text" name="nom"><br>
+              Introdueix la teva contrasenya:
+              <input type="password" name="contrasenya">
+          </div>
+          <footer class="container">
+            <input type="submit" value="ENTRA">
+          </footer>
+          </form>
+        </div>
+      </div>
+    </div>
+        <h1>Música</h1>
+    </header><!-- Capçalera amb un títol de tipus 1 -->
+	<nav class="gros">
+        <div class="principal"><!-- Rectangle -->
+			<ul class="nav">
+				<li><a href="inici.html" target="iframe">Inici</a><!-- Imatge --></li>
+				<li><a href="generes.html" target="iframe">Gèneres</a>
+					<ul>
+                        <li><a href="tradicional.html" target="iframe">Música tradicional</a></li>
+                        <li><a href="popular.html" target="iframe">Música popular o moderna</a></li>
+                        <li><a href="classica.html" target="iframe">Música clàssica</a></li>
+					</ul>
+				</li>
+				<li><a href="tops.html" target="iframe">Tops</a>
+					<ul>
+						<li><a href="top.html" target="iframe">Tops més escoltats</a>
+                            <ul>
+                                <li><a href="top.html#youtube" target="iframe">Youtube</a></li>
+                                <li><a href="top.html#spotify" target="iframe">Spotify</a></li>
+                                <li><a href="top.html#imusic" target="iframe">iMusic</a></li>
+                                <li><a href="top.html#amusic" target="iframe">Amazon Music</a></li>
+				            </ul>
+                        </li>
+						<li><a href="topf.html"  target="iframe">Top famosos</a>
+                            <ul>
+                                <li><a href="topf.html#trad" target="iframe">Música tradicional</a></li>
+                                <li><a href="topf.html#pop" target="iframe">Música popular o moderna</a></li>
+                                <li><a href="topf.html#clas" target="iframe">Música clàssica</a></li>
+				            </ul>
+                        </li>
+					</ul>
+				</li>
+                <li><a href="instruments.html" target="iframe">Instruments</a>
+                        <ul>
+                            <li><a href="percussio.html" target="iframe">Percussió</a></li>
+                            <li><a href="vent.html" target="iframe">Vent</a>
+                                <ul>
+                                    <li><a href="fusta.html" target="iframe">Fusta</a></li>
+                                    <li><a href="metal.html" target="iframe">Metall</a></li>
+				                </ul>
+                            </li>
+                            <li><a href="corda.html" target="iframe">Corda</a>
+                                <ul>
+                                    <li><a href="picada.html" target="iframe">Picada</a></li>
+                                    <li><a href="pusalda.html" target="iframe">Pulsada</a> </li>
+                                    <li><a href="fregada.html" target="iframe">Fregada</a></li>
+				                </ul>
+                            </li>
+				        </ul>
+                </li>
+                <li><a href="historia.html" target="iframe">Història de la música</a></li>
+				<li><a href="bibliografia.html" target="iframe">Bibliografia</a></li>
+			</ul>
+		</div>
+    </nav>
+	<main><!-- Cos principal del body -->
+        <section><!-- Divisió horitzontal del main -->
+            <iframe name="iframe" src="inici.html"></iframe><!-- Espai per mostrar altres pàgines sense canviar la pàgina principal -->
+        </section>
+    </main>
+    <footer><h5>Copyright by Antoni Matamalas Riera - 2020</h5><!-- Títol de tipus 5 --></footer><!-- Peu de pàgina -->
 </body>
-</HTML>
+</html>
