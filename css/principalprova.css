@@ -198,21 +198,21 @@ footer {
 }
 .divbotons {
   float: right;
-  width: 24.5%;
+  width: 25%;
 }
 /*.botons {
   width: 12.5%;
 }*/
 button {
-  border: white solid;
-  width: 12.4%;
+  border: none;
+  width: 25%;
+  float: right;
 }
 
 h1 {
   float: left;
-  border: white solid;
-  width: 74%;
-  color: white;
+  width: 75%;
+  color: black;
   text-align: center;
 }
 

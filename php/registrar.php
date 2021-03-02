@@ -11,7 +11,7 @@ if ($_GET) {
 
     $registrar = new Usuari();
     
-    $registrar->registrar($DNI,$nom,$correu,$contrasenya,$empresa);
+    echo $registrar->registrar($DNI,$nom,$correu,$contrasenya,$empresa);
     //header("Location: ../html/perfil.php");
 }
 

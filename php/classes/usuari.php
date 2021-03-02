@@ -4,25 +4,23 @@ session_start();
 include 'db.php';
 
 class Usuari extends DB{
-  /* public function comprovar($correu){
-    $comprovacio = "select * from USUARI where Correu='$correu'";
+  public function comprovar($correu){
+    $comprovacio = "select * from usuari where Correu='$correu'";
     $resultatComprovacio = $this->db->query($comprovacio);
-    var_dump($resultatComprovacio);
     $files = $resultatComprovacio->num_rows;
-    echo $files;
     if ($files == 0) {
       return 0;
     } else {
       return 1;
     }
-  } */
+  }
 
   public function login($correu,$contrasenya){
-    /* $this->comprovar($correu);
+    $this->comprovar($correu);
     if ($this->comprovar($correu) == 0) {
       return 0;
       exit;
-    } */
+    }
     $contrasenya = md5($contrasenya);
     $conBD = "select DNI,Nom,Correu from usuari where Correu='$correu' and Contrasenya='$contrasenya'";
     $resultatConBD = $this->db->query($conBD);
@@ -35,9 +33,10 @@ class Usuari extends DB{
   }
 
   public function registrar($DNI,$nom,$correu,$contrasenya,$empresa){
-    /* if ($this->comprovar($correu) == 1) {
+    if ($this->comprovar($correu) == 1) {
+      return 0;
       exit;
-    } */
+    }
     $contrasenya = md5($contrasenya);
     $nou = "insert into usuari (DNI,Nom,Correu,Contrasenya,NIF_Empresa) values ('$DNI','$nom','$correu','$contrasenya','$empresa')";
     if ($this->db->query($nou) == TRUE) {

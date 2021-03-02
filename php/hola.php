@@ -12,7 +12,7 @@ $hola = new Usuari();
 
 //$hola->registrar("41622494S","adria","adrian@hola.com","hola","12345678k");
 
-$hola->login("adrian@hola.com","hola");
+$hola->login("adrian@hola.com","Adrian2020");
 
 var_dump($_SESSION);
 
