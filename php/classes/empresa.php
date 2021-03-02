@@ -3,10 +3,6 @@
 include 'db.php';
 
 class Empresa extends DB{
-    public function __construct(){
-        parent::__construct();
-    }
-
     public function afegir($NIF,$nom,$adreça,$telefon){
         $inserir = "insert into EMPRESA (NIF,Nom,Adreça,Telèfon) values ('$NIF','$nom','$adreça','$telefon')";
         if ($this->db->query($inserir) == TRUE) {

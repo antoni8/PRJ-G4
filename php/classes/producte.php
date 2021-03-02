@@ -3,10 +3,6 @@
 include 'db.php';
 
 class Producte extends DB{
-    public function __construct(){
-        parent::__construct();
-    }
-
     public function afegir($nom,$stock,$preu,$descompte,$iva){
         $inserir = "insert into PRODUCTE (Nom,Stock,Preu,Descompte,IVA) values ('$nom',$stock,$preu,$descompte,$iva)";
         if ($this->db->query($inserir) == TRUE) {

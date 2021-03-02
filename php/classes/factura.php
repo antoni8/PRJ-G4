@@ -3,10 +3,6 @@
 include 'db.php';
 
 class Factura extends DB{
-    public function __construct(){
-        parent::__construct();
-    }
-
     public function novaFactura($data,$NIF){
         $inserir = "insert into FACTURA (Data,NIF_Empresa) values ('$data','$NIF')";
         if ($this->db->query($inserir) == TRUE) {
