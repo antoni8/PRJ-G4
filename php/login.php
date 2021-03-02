@@ -8,7 +8,8 @@ if ($_GET) {
 
     $login = new Usuari();
     $login = $login->login($correu,$contrasenya);
-    var_dump($_SESSION);
+    var_dump($login);
+    //header("Location: ../html/perfil.php");
 }
 
 ?>
