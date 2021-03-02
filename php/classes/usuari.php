@@ -4,9 +4,6 @@ session_start();
 include 'db.php';
 
 class Usuari extends DB{
-  public function __construct(){
-    parent::__construct();
-  }
   /* public function comprovar($correu){
     $comprovacio = "select * from USUARI where Correu='$correu'";
     $resultatComprovacio = $this->db->query($comprovacio);

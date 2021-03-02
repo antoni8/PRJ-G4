@@ -1,0 +1,225 @@
+/* Posar fondo de pantalla centrat i que cobreixi tot el fons*/
+
+body {
+    background-image: url("../fotos/logo.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Totes les etiquetes no tenguin paddings ni margin i la font de lletra sigui la que establim anteriorment */
+
+* {
+    margin:0px;
+    padding:0px;
+}
+
+/* Donar un marges automàtics i una amplada a les etiquetes amb class=principal */
+.principal {
+	margin:auto;
+	width: 50%;
+}
+
+/* Eliminar l'estil de llista */
+
+ul, ol {
+    list-style:none;
+}
+
+/* Fer que les etiquetes amb class=nav tots els seus li se col·loquin a l'esquerre */
+
+.nav > li {
+    float:left;
+}
+
+/* Fer que totes les etiquetes a que estan dins un li dins class=nav tenguin un fons, color de lletra, no tenguin cap tipo de decoració, pasar-li un padding, que sigui visible i que fagui una transició cap a un color en 0.75 segons */
+.nav li a {
+    background-color:transparent;
+    color: red;
+    text-decoration:none;
+    padding:10px 12px;
+	display:block;
+    transition: color 0.75s;
+}
+
+/* Donar color a tots els a que estiguin dins un li dins l'etiqueta amb class=nav */
+
+.nav li a:hover {
+    color: black;
+}
+
+/* Fer que totes les ul dins els li dins l'etiqueta amb class=nav tengui un color, no aparegui, tengui una posició definida, i un màxim i un mínim d'amplada */
+
+.nav li ul {
+    color: white;
+    display:none;
+	position:absolute;
+	min-width:140px;
+    max-width: 200px;
+}
+
+/* Fer que quan el cursor està damunt un li dins l'etiqueta amb class=nav es mostri l'ul dins del li */
+
+.nav li:hover > ul {
+    display: block;
+}
+
+/* Donar una posició a tots els li que formen part d'algun ul que alhora sigui part d'algun li i que aquest li sigui part de l'etiqueta amb class=nav */
+
+.nav li ul li {
+    position: relative;
+}
+
+/* Col·locar a una posició que volem a tots els ul que són part d'un li que formen part d'algun ul que alhora sigui part d'algun li i que aquest li sigui part de l'etiqueta amb class=nav */
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+/* Posar padding a tot el main */
+main {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* Donar amplada i altura a tots els iframes */
+iframe {
+    width: 100%;
+    height: 625px;
+}
+
+@-webkit-keyframes example {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+/* Add animation (Standard syntax) */
+@keyframes example {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+/* The modal's background */
+.registrar {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb (0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: registrar;
+}
+
+/* Display the modal when targeted */
+.registrar:target {
+  display: table;
+  position: absolute;
+}
+.login {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb (0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: login;
+}
+
+/* Display the modal when targeted */
+.login:target {
+  display: table;
+  position: absolute;
+}
+
+/* The modal box */
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* The modal's content */
+.modal-dialog .modal-content {
+  margin: auto;
+  background-color: white;
+  color: red;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 1px #777 solid;
+  text-align: justify;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  /* Add animation */
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+/* The button used to close the modal */
+.closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+  color: yellow;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+header {
+  background-color: black;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+.divbotons {
+  float: right;
+  width: 24.5%;
+}
+/*.botons {
+  width: 12.5%;
+}*/
+button {
+  border: white solid;
+  width: 12.4%;
+}
+
+h1 {
+  float: left;
+  border: white solid;
+  width: 74%;
+  color: white;
+  text-align: center;
+}
+
+input[type=submit] {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border-radius: 50%;
+}
