@@ -46,6 +46,13 @@ class Usuari extends DB{
     }
   }
 
+  public function perfil($dni){
+    $info = "select u.DNI,u.Nom,u.Correu,u.Rol,e.Nom as 'NomE' from usuari u join empresa e on u.NIF_EMPRESA = e.NIF where u.DNI='$dni'";
+    $info = $this->db->query($info);
+    $info = $info->fetch_assoc();
+    return $info;
+  }
+
 }
 
  ?>
