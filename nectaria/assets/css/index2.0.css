@@ -108,31 +108,6 @@ footer {
   color: white;
   text-align: center;
 }
-
-a:link, a:visited {
-  color: red;
-}
-@font-face {
-  font-family: hola;
-  src: url(../fonts/space/space_age.ttf);
-}
-@font-face {
-  font-family: registrar;
-  src: url(../fonts/aAtos/aAtos.ttf);
-}
-@font-face {
-  font-family: login;
-  src: url(../fonts/raidercrusader/raidercrusadertitle.ttf);
-}
-body{
- background: url('../fotos/logo.png') no-repeat fixed center;
-}
-h1 {
-  font-family: hola;
-}
-button {
-  border: none;
-}
 input[type=submit] {
   border: none;
   width: 100%;
@@ -140,6 +115,10 @@ input[type=submit] {
   color: white;
   border-radius: 50%;
 }
+.contacte {
+  text-align: center;
+}
+
 /*
 Nectaria - FREE HTML TEMPLATE BY WOWTHEMES.NET
 Version: 1.0.0
