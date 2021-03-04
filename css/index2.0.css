@@ -19,11 +19,11 @@
   height: 100%;
   overflow: auto;
   background-color: rgb (0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.5);
-  font-family: registrar;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: login;
   z-index: 10;
-  border-radius: 50%;
 }
+
 
 /* Display the modal when targeted */
 .registrar:target {

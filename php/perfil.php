@@ -33,6 +33,6 @@ if ($_SESSION['login'] == true) {
 <p>Rol: <?php echo $info['Rol']; ?></p>
 <hr>
 <a href="canviaContrasenya.php">Canvia la contrasenya</a>
-
+<button><a href="cerrar.php">Me cagon tom pare amb bolles amb es puta bottonet!!</a></button>
 </body>
 </html>

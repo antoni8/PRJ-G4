@@ -7,27 +7,28 @@
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="shortcut icon" href="#">
-<link rel="stylesheet" type="text/css" href="../css/index2.0.css"/>
+<link rel="stylesheet" type="text/css" href="css/index2.0.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 </head>
 <body class="home-template">
 <div class="site-wrapper">
 	<nav class="main-nav overlay clearfix">
-	<a class="blog-logo" href="index.html" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
+	<a class="blog-logo" href="index.html" style="height:64px;width:100px;"><img src="fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="index.html">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="../php/factura.php">Factura</a></li>
-		<li class="nav-about-us" role="presentation"><a href="../php/magatzem.php">Almacén</a></li>
-		<li class="nav-author-page" role="presentation"><a href="../php/perfil.php">Perfil</a></li>
+		<li class="nav-article-example" role="presentation"><a href="php/factura.php">Factura</a></li>
+		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Almacén</a></li>
+		<li class="nav-author-page" role="presentation"><a href="php/perfil.php">Perfil</a></li>
 		<span class="socialheader">
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
 		<a href="mailto://amatamalas11837@gmail.com"><span class='symbol'>circleemail</span></a>
+                <a href="#login"><span class='symbol'><img src='fotos/perfil.png' style="height:43px;"></span></a>
 		</span>
 	</ul>
 	</nav>
-	<header class="main-header" <!--style="background-image: url(../fotos/logo.png)"-->>
+	<header class="main-header" <!--style="background-image: url(fotos/logo.png)"-->>
 	<div class="vertical">
 		<div class="main-header-content inner">
 			<h1 class="page-title"></h1>
@@ -240,9 +241,9 @@
 	</footer>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="../java/masonry.min.js"></script>
-<script type="text/javascript" src="../java/jquery.fitvids.js"></script>
-<script type="text/javascript" src="../java/index.js"></script>
+<script type="text/javascript" src="java/masonry.min.js"></script>
+<script type="text/javascript" src="java/jquery.fitvids.js"></script>
+<script type="text/javascript" src="java/index.js"></script>
 <div id="registrar" class="registrar">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -251,7 +252,7 @@
         <h2>REGISTRA'T</h2>
       </header>
       <div class="container">
-        <form action="../php/registrar.php" method="get">
+        <form action="php/registrar.php" method="get">
         Introdueix el teu correu electronic:
         <input type="email" name="correu"><br>
 	       Introdueix el teu nom d'usuari:
@@ -280,12 +281,13 @@
         <h2>LOGIN</h2>
       </header>
       <div class="container">
-        <form action="../php/login.php" method="get">
+        <form action="php/login.php" method="get">
           Introdueix el teu correu electrònic:
           <input type="email" name="correu"><br>
           Introdueix la teva contrasenya:
           <input type="password" name="contrasenya"><br>
-					<a href="#rempwd">Recordar contrasenya</a>
+	  <a href="#rempwd">Recordar contrasenya</a>
+          <a href="#registrar">Registrar-se</a>
       </div>
       <footer class="container">
         <input type="submit" value="ENTRA">
