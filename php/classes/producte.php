@@ -1,10 +1,11 @@
 <?php
 
+session_start();
 include 'db.php';
 
 class Producte extends DB{
     public function afegir($nom,$stock,$preu,$descompte,$iva){
-        $inserir = "insert into PRODUCTE (Nom,Stock,Preu,Descompte,IVA) values ('$nom',$stock,$preu,$descompte,$iva)";
+        $inserir = "insert into producte (Nom,Stock,Preu,Descompte,IVA) values ('$nom',$stock,$preu,$descompte,$iva)";
         if ($this->db->query($inserir) == TRUE) {
             return "Nou producte inserit";
         } else {
@@ -13,7 +14,7 @@ class Producte extends DB{
     }
 
     public function borrar($id){
-        $borrar = "delete from PRODUCTE where ID = '$id'";
+        $borrar = "delete from producte where ID = '$id'";
         if ($this->db->query($borrar) == TRUE) {
             return "Producte borrat";
         } else {
@@ -22,7 +23,7 @@ class Producte extends DB{
     }
 
     public function editarStock($id,$nouStock){
-        $canviar = "update PRODUCTE set Stock = $nouStock where ID = $id";
+        $canviar = "update producte set Stock = $nouStock where ID = $id";
         if ($this->db->query($canviar) == TRUE) {
             return "S'ha canviat l'stock";
         } else {
@@ -31,7 +32,7 @@ class Producte extends DB{
     }
 
     public function llistar(){
-        $llista = "select * from PRODUCTE";
+        $llista = "select * from producte";
         $resultat = $this->db->query($llista);
         return $resultat;
     }
