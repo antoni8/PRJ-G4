@@ -40,6 +40,10 @@ if ($_SESSION['login'] == true) {
         echo $individual['IVA'];
         echo "</td>";
 
+        echo "<td>";
+        echo "<a href=''>Elimina el producte</a>";
+        echo "<a href=''>Canvia l'stock</a>";
+
         echo "</tr>";
     }
 
