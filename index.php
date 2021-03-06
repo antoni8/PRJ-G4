@@ -289,7 +289,7 @@ include "php/perfil.php";
         <h2>LOGIN</h2>
       </header>
       <div class="container">
-        <form action="index.php" method="get">
+        <form action="php/perfil.php" method="get">
           Introdueix el teu correu electrònic:
           <input type="email" name="correu"><br>
           Introdueix la teva contrasenya:
