@@ -8,7 +8,7 @@ if ($_SESSION['login'] == true) {
     $info = $usuari->perfil($dni);
 }
 ?>
-<html>
+<!--<html>
 <head>
 </head>
 <body>
@@ -33,4 +33,4 @@ if ($_SESSION['login'] == true) {
    </div>
  </div>
 </body>
-</html>
+</html>-->

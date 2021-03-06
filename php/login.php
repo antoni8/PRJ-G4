@@ -8,7 +8,7 @@ if ($_GET) {
 
     $login = new Usuari();
     $login = $login->login($correu,$contrasenya);
-    header("Location: perfil.php");
+    header("Location: ../index.php#perfil");
 }
 
 ?>

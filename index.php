@@ -289,7 +289,7 @@ include "php/perfil.php";
         <h2>LOGIN</h2>
       </header>
       <div class="container">
-        <form action="php/perfil.php" method="get">
+        <form action="php/login.php" method="get">
           Introdueix el teu correu electrònic:
           <input type="email" name="correu"><br>
           Introdueix la teva contrasenya:
@@ -304,20 +304,18 @@ include "php/perfil.php";
     </div>
   </div>
 </div>
-<?php
-/*if ($_SESSION['login']==true){
- echo "<div id='perfil' class='perfil'>
+<div id='perfil' class='perfil'>
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>
-				<h1>$info['Nom']</h1>
-				<h4><p>$info['NomE']</p></h4>
+				<h1><?php echo $info['Nom'];?></h1>
+				<h4><p><?php echo $info['NomE'];?></p></h4>
 				<a href='index.php' class='closebtn'>x</a>
       </header>
       <div class='container'>
-	<p>DNI: $info['DNI']</p>
-	<p>Correu electrònic: $info['Correu']</p>
-	<p>Rol: $info['Rol']</p>
+	<p>DNI: <?php echo $info['DNI'];?></p>
+	<p>Correu electrònic: <?php $info['Correu'];?></p>
+	<p>Rol: <?php echo $info['Rol'];?></p>
       </div>
       <footer class='container'>
 	<a href='canviaContrasenya.php'>Canvia la contrasenya</a>
@@ -325,8 +323,6 @@ include "php/perfil.php";
       </footer>
     </div>
   </div>
-</div>";
-}*/
-?>
+</div>
 </body>
 </html>
