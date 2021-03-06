@@ -276,29 +276,24 @@ include "php/perfil.php";
     </div>
   </div>
 </div>
-<div id="login" class="login">
-  <?php
-  /*if ($_SESSION['login']==true) {
-    header("Location: index.php");
-  }*/
-  ?>
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <header class="container">
-        <a href="index.php" class="closebtn">x</a>
-        <h2>LOGIN</h2>
-      </header>
-      <div class="container">
-        <form action="php/login.php" method="get">
+<div id='login' class='login'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+    <header class='container'>
+      <a href='index.php' class='closebtn'>x</a>
+      <h2>LOGIN</h2>
+    </header>
+      <div class='container'>
+        <form action='php/login.php' method='get'>
           Introdueix el teu correu electrònic:
-          <input type="email" name="correu"><br>
+          <input type='email' name='correu'><br>
           Introdueix la teva contrasenya:
-          <input type="password" name="contrasenya"><br>
-	  <a href="#rempwd">Recordar contrasenya</a>
-          <a href="#registrar">Registrar-se</a>
+          <input type='password' name='contrasenya'><br>
+	  <a href='#rempwd'>Recordar contrasenya</a>
+          <a href='#registrar'>Registrar-se</a>
       </div>
-      <footer class="container">
-        <input type="submit" value="ENTRA">
+      <footer class='container'>
+        <input type='submit' value='ENTRA'>
       </footer>
       </form>
     </div>
@@ -308,21 +303,23 @@ include "php/perfil.php";
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>
-				<h1><?php echo $info['Nom'];?></h1>
-				<h4><p><?php echo $info['NomE'];?></p></h4>
-				<a href='index.php' class='closebtn'>x</a>
+        <a href='index.php' class='closebtn'>x</a>
+        <h1><?php echo $info['Nom'];?></h1>
+        <h4><p><?php echo $info['NomE'];?></p></h4>
       </header>
       <div class='container'>
 	<p>DNI: <?php echo $info['DNI'];?></p>
-	<p>Correu electrònic: <?php $info['Correu'];?></p>
+	<p>Correu electrònic: <?php echo $info['Correu'];?></p>
 	<p>Rol: <?php echo $info['Rol'];?></p>
+	<a href='php/canviarcontrasenya.php'>Canvia la contrasenya</a>
       </div>
       <footer class='container'>
-	<a href='canviaContrasenya.php'>Canvia la contrasenya</a>
 	<button><a href='php/cerrar.php'>Tanca sessió</a></button>
       </footer>
     </div>
   </div>
-</div>
+</div>";
+}
+?>
 </body>
 </html>
