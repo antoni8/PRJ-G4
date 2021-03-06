@@ -305,14 +305,14 @@ include "php/perfil.php";
   </div>
 </div>
 <?php
-if ($_SESSION['login']==true){
+/*if ($_SESSION['login']==true){
  echo "<div id='perfil' class='perfil'>
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>
-	<h1> $info['Nom']</h1>
-	<h4><p> $info['NomE']</p></h4>
-	<a href='index.php' class='closebtn'>x</a>
+				<h1>$info['Nom']</h1>
+				<h4><p>$info['NomE']</p></h4>
+				<a href='index.php' class='closebtn'>x</a>
       </header>
       <div class='container'>
 	<p>DNI: $info['DNI']</p>
@@ -326,7 +326,7 @@ if ($_SESSION['login']==true){
     </div>
   </div>
 </div>";
-}
+}*/
 ?>
 </body>
 </html>
