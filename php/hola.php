@@ -6,22 +6,23 @@
 //$db = new DB();
 
 // Clase de usuari
-/* include 'classes/usuari.php'; */
+include 'classes/usuari.php';
 
-/* $hola = new Usuari(); */
+$hola = new Usuari();
+
+$hola->login("antoni@hola.com","hola");
+var_dump($_SESSION);
+echo "<br>";
+var_dump($hola->canviaContra($_SESSION['id'],"patata"));
 
 //$hola->registrar("41622494S","adria","adrian@hola.com","hola","12345678k");
 
-/* $hola->login("adrian@hola.com","Adrian2020"); */
-
-/* var_dump($_SESSION); */
-
 // Clase de prodcute
-include 'classes/producte.php';
+//include 'classes/producte.php';
 
-$taula = new Producte();
+//$taula = new Producte();
 
-echo $taula->afegir("Espe",1,10000,21,21);
+//echo $taula->afegir("Espe",1,10000,21,21);
 /* $taula->borrar(3); */
 /* $taula->editarStock(1,5); */
 

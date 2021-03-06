@@ -53,6 +53,25 @@ class Usuari extends DB{
     return $info;
   }
 
+  public function canviaContra($dni,$novaContra){
+    $antigaContra = "select Contrasenya from usuari where DNI='$dni'";
+    $antigaContra = $this->db->query($antigaContra);
+    $antigaContra = $antigaContra->fetch_assoc();
+    $antigaContra = $antigaContra['Contrasenya'];
+    $novaContra = md5($novaContra);
+    
+    if ($antigaContra == $novaContra) {
+      return false;
+    } else {
+      $canviar = "update usuari set Contrasenya = '$novaContra' where DNI='$dni'";
+      if ($this->db->query($canviar) == TRUE) {
+        return "S'ha canviat la contrasenya";
+      } else {
+        return "Error".$this->db->error;
+      }
+    }
+  }
+
 }
 
  ?>
