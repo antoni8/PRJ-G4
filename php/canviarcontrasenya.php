@@ -8,7 +8,7 @@ echo "<html>
 <body>";
 echo "<form action='' method='get'>";
 echo "<input type='password' name='password'><input type='submit' value='VERIFICA'></form>";
-if (isset($_GET["password"])&(($comprovar->canviaContra($dni,$contrasenya) == false))){
+if (isset($_GET["password"])&(($comprovar->comprovarContra($dni2,$contrasenya2) == true))){
   echo "<form action='<?php echo $_SERVER[PHP_SELF]; ?>' method='post'>";
   echo "Indica la nova contrasenya:\n<input type='password' name='contranovao'><br>";
   echo "Verifica la nova contraseya:\n<input type='password' name='contranovar'><br>";
@@ -20,7 +20,8 @@ include 'classes/usuari.php';
 
 if (isset($_GET)) {
   $comprovar = new Usuari();
-  $dni = $_SESSION['id'];
+  $dni2 = $_SESSION['id'];
+  $contrasenya2 = $_GET['password'];
 }
 
 if (isset($_POST)) {

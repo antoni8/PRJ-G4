@@ -72,6 +72,17 @@ class Usuari extends DB{
     }
   }
 
+  public function comprovarContra($dni,$contrasenya){
+    $contraBD = "select Contrasenya from usuari where DNI='$dni'";
+    $contraBD = $this->db->query($contraBD);
+    $contraBD = $contraBD->fetch_assoc();
+    $contraBD = $contraBD['Contrasenya'];
+    
+    if ($contraBD == $contrasenya) {
+      return true;
+    }
+  }
+
 }
 
  ?>
