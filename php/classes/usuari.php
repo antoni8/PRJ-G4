@@ -77,6 +77,7 @@ class Usuari extends DB{
     $contraBD = $this->db->query($contraBD);
     $contraBD = $contraBD->fetch_assoc();
     $contraBD = $contraBD['Contrasenya'];
+    $contrasenya = md5($contrasenya);
     
     if ($contraBD == $contrasenya) {
       return true;
