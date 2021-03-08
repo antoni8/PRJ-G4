@@ -19,7 +19,7 @@ include "php/perfil.php";
 	<a class="blog-logo" href="index.php" style="height:64px;width:100px;"><img src="fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="index.php">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="php/factura.php">Factura</a></li>
+		<li class="nav-article-example" role="presentation"><a href="html/facturaprincipal.html">Factura</a></li>
 		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
