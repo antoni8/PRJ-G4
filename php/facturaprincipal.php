@@ -1,9 +1,12 @@
+<?php
+include "perfil.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>A&sup2; - Benviguts a la nostra aplicació</title>
+<title>A&sup2; - FACTURA</title>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="shortcut icon" href="#">
@@ -16,8 +19,8 @@
 	<a class="blog-logo" href="../index.php" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="../php/factura.php">Factura</a></li>
-		<li class="nav-about-us" role="presentation"><a href="../php/magatzem.php">Almacén</a></li>
+		<li class="nav-article-example" role="presentation"><a href="facturaprincipal.php">Factura</a></li>
+		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
@@ -52,7 +55,7 @@
                 </section>
                 <footer class="post-footer">
                 <figure class="author-image">
-                <a class="img" href="../author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg">
+                <a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg">
                 </figure>
                 <section class="author">
                 <h4><a href="">David</a></h4>
@@ -82,7 +85,7 @@
         <div class="clearfix">
         </div>
         <aside class="read-next">
-        <a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="facturaprincipal.html">
+        <a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="facturaprincipal.php">
         <section class="post">
         <h2>The first journey in my life</h2>
         <p>
@@ -90,7 +93,7 @@
         </p>
         </section>
         </a>
-        <a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="facturaprincipal.html">
+        <a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="facturaprincipal.php">
         <section class="post">
         <h2>Few days at his shop</h2>
         <p>
@@ -111,5 +114,78 @@
 <script type="text/javascript" src="../java/masonry.min.js"></script>
 <script type="text/javascript" src="../java/jquery.fitvids.js"></script>
 <script type="text/javascript" src="../java/index.js"></script>
+<script type="text/javascript" src="../java/factura.js"></script>
+<div id="registrar" class="registrar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="container">
+        <a href="facturaprincipal.php" class="closebtn">x</a>
+        <h2>REGISTRA'T</h2>
+      </header>
+      <div class="container">
+        <form action="../php/registrar.php" method="get">
+        Introdueix el teu correu electronic:
+        <input type="email" name="correu"><br>
+	       Introdueix el teu nom d'usuari:
+          <input type="text" name="nom"><br>
+	       Introdueix el teu DNI:
+          <input type="text" name="dni"><br>
+          Introdueix la teva contrasenya:
+          <input type="password" name="contrasenyao" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+	  Confirma la teva contrasenya:
+          <input type="password" name="contrasenyar"><br>
+	  Introdueix la teva empresa:
+	  <input type="text" name="empresa">
+      </div>
+      <footer class="container">
+        <input type="submit" value="REGISTRA'T">
+      </footer>
+      </form>
+    </div>
+  </div>
+</div>
+<div id='login' class='login'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+    <header class='container'>
+      <a href='facturaprincipal.php' class='closebtn'>x</a>
+      <h2>LOGIN</h2>
+    </header>
+      <div class='container'>
+        <form action='login.php' method='get'>
+          Introdueix el teu correu electrònic:
+          <input type='email' name='correu'><br>
+          Introdueix la teva contrasenya:
+          <input type='password' name='contrasenya'><br>
+	  <a href='#rempwd'>Recordar contrasenya</a>
+          <a href='#registrar'>Registrar-se</a>
+      </div>
+      <footer class='container'>
+        <input type='submit' value='ENTRA'>
+      </footer>
+      </form>
+    </div>
+  </div>
+</div>
+<div id='perfil' class='perfil'>
+   <div class='modal-dialog'>
+    <div class='modal-content'>
+      <header class='container'>
+        <a href='facturaprincipal.php' class='closebtn'>x</a>
+        <h1><?php echo $info['Nom'];?></h1>
+        <h4><p><?php echo $info['NomE'];?></p></h4>
+      </header>
+      <div class='container'>
+	<p>DNI: <?php echo $info['DNI'];?></p>
+	<p>Correu electrònic: <?php echo $info['Correu'];?></p>
+	<p>Rol: <?php echo $info['Rol'];?></p>
+	<a href='canviarcontrasenya.php'>Canvia la contrasenya</a>
+      </div>
+      <footer class='container'>
+	<button><a href='cerrar.php'>Tanca sessió</a></button>
+      </footer>
+    </div>
+  </div>
+</div>
 </body>
 </html>
