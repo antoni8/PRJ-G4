@@ -1,21 +1,22 @@
 <?php
 
 // Classe de db
-//include 'classes/db.php';
+/* include 'classes/db.php';
 
-//$db = new DB();
+var_dump($db = new DB()); */
 
 // Clase de usuari
 include 'classes/usuari.php';
 
 $hola = new Usuari();
 
-$hola->login("antoni@hola.com","hola");
+$hola->login("adrian@hola.com","hola");
 var_dump($_SESSION);
 echo "<br>";
-var_dump($hola->canviaContra($_SESSION['id'],"patata"));
+//$hola->canviaContra($_SESSION['id'],"patata");
+//var_dump($hola->canviaContra($_SESSION['id'],"patata"));
 
-//$hola->registrar("41622494S","adria","adrian@hola.com","hola","12345678k");
+//echo $hola->registrar("41622494S","adria","adrian@adrian.com","Adrian2020","12345678k");
 
 // Clase de prodcute
 //include 'classes/producte.php';

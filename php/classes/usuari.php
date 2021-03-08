@@ -25,7 +25,7 @@ class Usuari extends DB{
     $conBD = "select DNI,Nom,Correu from usuari where Correu='$correu' and Contrasenya='$contrasenya'";
     $resultatConBD = $this->db->query($conBD);
     $dades = $resultatConBD->fetch_assoc();
-
+    var_dump($dades);
     $_SESSION['login'] = true;
     $_SESSION['id'] = $dades['DNI'];
     $_SESSION['nom'] = $dades['Nom'];
