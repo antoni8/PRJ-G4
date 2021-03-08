@@ -8,7 +8,7 @@ echo "<html>
 <body>";
 echo "<form action='' method='get'>";
 echo "<input type='password' name='password'><input type='submit' value='VERIFICA'></form>";
-if (isset($_GET["password"])&(($comprovar->canviaContra($dni,$contrasenya) == false))){
+if (isset($_GET["password"])&&(($comprovar->canviaContra($dni,$contrasenya) == false))){
   echo "<form action='<?php echo $_SERVER[PHP_SELF]; ?>' method='post'>";
   echo "Indica la nova contrasenya:\n<input type='password' name='contranovao'><br>";
   echo "Verifica la nova contraseya:\n<input type='password' name='contranovar'><br>";
