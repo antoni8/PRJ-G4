@@ -22,7 +22,7 @@ class Usuari extends DB{
       exit;
     }
     $contrasenya = md5($contrasenya);
-    $conBD = "select DNI,Nom,Correu from usuari where Correu='$correu' and Contrasenya='$contrasenya'";
+    $conBD = "select DNI,Nom,Correu,Rol,NIF_Empresa from usuari where Correu='$correu' and Contrasenya='$contrasenya'";
     $resultatConBD = $this->db->query($conBD);
     $dades = $resultatConBD->fetch_assoc();
     var_dump($dades);
@@ -30,6 +30,8 @@ class Usuari extends DB{
     $_SESSION['id'] = $dades['DNI'];
     $_SESSION['nom'] = $dades['Nom'];
     $_SESSION['correu'] = $dades['Correu'];
+    $_SESSION['rol'] = $dades['Rol'];
+    $_SESSION['nif'] = $dades['NIF_Empresa'];
   }
 
   public function registrar($DNI,$nom,$correu,$contrasenya,$empresa){

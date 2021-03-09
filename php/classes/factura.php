@@ -1,6 +1,7 @@
 <?php
 
 include 'db.php';
+session_start();
 
 class Factura extends DB{
     public function novaFactura($data,$NIF){
@@ -14,6 +15,12 @@ class Factura extends DB{
 
     public function borrarFactura($id){
         
+    }
+
+    public function llistarFactures($nif){
+        $factures = "select ID,Data,PreuTotal from factura where NIF_Empresa='$nif'";
+        $factures = $this->db->query($factures);
+        return $factures;
     }
 }
 

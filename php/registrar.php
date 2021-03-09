@@ -10,9 +10,9 @@ if ($_GET) {
     $empresa = $_GET['empresa'];
 
     $registrar = new Usuari();
-    
+
     echo $registrar->registrar($DNI,$nom,$correu,$contrasenya,$empresa);
-    //header("Location: ../html/perfil.php");
+    header("Location: ../html/perfil.php");
 }
 
 ?>

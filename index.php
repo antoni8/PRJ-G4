@@ -19,7 +19,7 @@ include "php/perfil.php";
 	<a class="blog-logo" href="index.php" style="height:64px;width:100px;"><img src="fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="index.php">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="html/facturaprincipal.html">Factura</a></li>
+		<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>
 		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
@@ -314,12 +314,10 @@ include "php/perfil.php";
 	<a href='php/canviarcontrasenya.php'>Canvia la contrasenya</a>
       </div>
       <footer class='container'>
-	<button><a href='php/cerrar.php'>Tanca sessió</a></button>
+	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
       </footer>
     </div>
   </div>
-</div>";
-}
-?>
+</div>
 </body>
 </html>

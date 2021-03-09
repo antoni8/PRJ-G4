@@ -27,7 +27,7 @@ include "perfil.php";
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
 		<a href="mailto://amatamalas11837@gmail.com"><span class="symbol">circleemail</span></a>
-		<a href="#login" style="width:25px;"><span class="symbol"><img src="../fotos/perfil.jpg" style="width:25px;"></span></a>
+		<a href="#login" style="width:25px;"><span class="symbol"><img src="../fotos/perfil.png" style="width:25px;"></span></a>
 		</span>
 	</ul>
 	</nav>
@@ -46,40 +46,42 @@ include "perfil.php";
         </header>
         <main id="content" class="content" role="main">
         <div class="wraps">
-                <img src="assets/img/shadow.png" class="wrapshadow">
-                <article class="post featured">
-                <section class="post-content">
-                <p>
-                        One of the important highlights of my experience at Ashok’s was lear>
-                </p>
-                </section>
-                <footer class="post-footer">
-                <figure class="author-image">
-                <a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg">
-                </figure>
-                <section class="author">
-                <h4><a href="">David</a></h4>
-                <p>
-                        The blog combining journalist David&#x27;s years of experience cover>
-                </p>
-                <div class="author-meta">
-                        <span class="author-location icon-location">Europe</span>
-                        <span class="author-link icon-link"><a href="https://www.wowthemes.net">
-                </div>
-                </section>
-</section>
-                </footer>
-                <div id="disqus_thread">
-                </div>
-                <script>
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://wowthemesdemo.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
-                        </script>
-                </article>
+        <H2>ALBARÀ</H2>
+    <h3>INTRODUEIX EL TEU ALBARÀ</h3>
+  <FORM ACTION='' METHOD='GET'>
+    <table border="1" id="demo">
+      <tr><input type="date" name="data">
+      <tr>
+        <td>Referencia</td>
+        <td>Nombre</td>
+        <td>Texto</td>
+        <td>Almacén</td>
+        <td>Cantidad</td>
+        <td>Precio</td>
+        <td>Dto.</td>
+        <td>IVA</td>
+        <td>Importe</td>
+        <!--<td>Tria</td>-->
+      </tr>
+      <tr>
+        <td class="ref"><input type='text' name='referència' autofocus></td>
+        <td><?php echo $nom;?></td>
+        <td><input type='text' name='text' value='[vacío]'></td>
+        <td><input type='text' name='almacen'></td>
+        <td><input type='number' name='quantitat'></td>
+        <td><?php echo $preu;?></td>
+        <td><?php echo $descompte;?></td>
+        <td><?php echo $iva;?></td>
+        <td><?php echo $import;?></td>
+        <!--<td><input type="checkbox" name="check"></td>-->
+      </tr>
+      <tr>
+        <td><button type="button" onclick='addRow()'>Añadir fila</button></td>
+        <td><button type="button" onclick='deleteRow()'>Eliminar fila</button></td>
+      </tr>
+    </table>
+    <input type="submit">
+    </FORM>
         </div>
         </main>
         <div class="clearfix">
