@@ -46,6 +46,7 @@ include "perfil.php";
         </header>
         <main id="content" class="content" role="main">
         <div class="wraps">
+<<<<<<< Updated upstream
         <H2>ALBARÀ</H2>
     <h3>INTRODUEIX EL TEU ALBARÀ</h3>
   <FORM ACTION='' METHOD='GET'>
@@ -82,6 +83,42 @@ include "perfil.php";
     </table>
     <input type="submit">
     </FORM>
+=======
+                <img src="assets/img/shadow.png" class="wrapshadow">
+                <article class="post featured">
+                <section class="post-content">
+                <p>
+                        One of the important highlights of my experience at Ashok’s was lear>
+                </p>
+                </section>
+                <footer class="post-footer">
+                <figure class="author-image">
+                <a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg">
+                </figure>
+                <section class="author">
+                <h4><a href="">David</a></h4>
+                <p>
+                        The blog combining journalist David&#x27;s years of experience cover
+                </p>
+                <div class="author-meta">
+                        <span class="author-location icon-location">Europe</span>
+                        <span class="author-link icon-link"><a href="https://www.wowthemes.net">
+                </div>
+                </section>
+</section>
+                </footer>
+                <div id="disqus_thread">
+                </div>
+                <script>
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://wowthemesdemo.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                        </script>
+                </article>
+>>>>>>> Stashed changes
         </div>
         </main>
         <div class="clearfix">
