@@ -1,5 +1,7 @@
 <?php
-include "php/perfil.php";
+if (isset($_SESSION['login']) == true){
+	include "php/perfil.php";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -290,7 +292,15 @@ include "php/perfil.php";
           Introdueix la teva contrasenya:
           <input type='password' name='contrasenya'><br>
 	  <a href='#rempwd'>Recordar contrasenya</a>
-          <a href='#registrar'>Registrar-se</a>
+          <a href='#registrar'>Registrar-se</a><br>
+		  <?php
+			if (isset($_GET['error']) == 'correu'){
+				echo "El correu no està registrat";
+			}
+			if (isset($_GET['error2']) == 'contra') {
+				echo "La contrasenta no és correcte";
+			}
+		  ?>
       </div>
       <footer class='container'>
         <input type='submit' value='ENTRA'>

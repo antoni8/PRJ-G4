@@ -24,6 +24,9 @@ class Usuari extends DB{
     $contrasenya = md5($contrasenya);
     $conBD = "select DNI,Nom,Correu,Rol,NIF_Empresa from usuari where Correu='$correu' and Contrasenya='$contrasenya'";
     $resultatConBD = $this->db->query($conBD);
+    if ($resultatConBD->num_rows == 0) {
+      return 2;
+    }
     $dades = $resultatConBD->fetch_assoc();
     var_dump($dades);
     $_SESSION['login'] = true;
@@ -32,6 +35,7 @@ class Usuari extends DB{
     $_SESSION['correu'] = $dades['Correu'];
     $_SESSION['rol'] = $dades['Rol'];
     $_SESSION['nif'] = $dades['NIF_Empresa'];
+    return 1;
   }
 
   public function registrar($DNI,$nom,$correu,$contrasenya,$empresa){

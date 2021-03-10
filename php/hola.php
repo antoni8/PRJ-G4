@@ -10,13 +10,13 @@ include 'classes/usuari.php';
 
 $hola = new Usuari();
 
-$hola->login("adrian@hola.com","hola");
+/* $hola->login("adrian@hola.com","hola");
 var_dump($_SESSION);
-echo "<br>";
+echo "<br>"; */
 //$hola->canviaContra($_SESSION['id'],"patata");
 //var_dump($hola->canviaContra($_SESSION['id'],"patata"));
 
-//echo $hola->registrar("41622494S","adria","adrian@adrian.com","Adrian2020","12345678k");
+echo $hola->registrar("41622494S","adria","adrian@adrian.com","Adrian2020","12345678k");
 
 // Clase de prodcute
 //include 'classes/producte.php';

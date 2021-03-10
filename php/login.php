@@ -8,7 +8,13 @@ if ($_GET) {
 
     $login = new Usuari();
     $login = $login->login($correu,$contrasenya);
-    header("Location: ../index.php#perfil");
+    if ($login == 0) {
+        header("Location: error.php?error=correu");
+    } elseif ($login == 2) {
+        header("Location: error.php?error=contra");
+    } else {
+        header("Location: ../index.php#perfil");
+    }
 }
 
 ?>
