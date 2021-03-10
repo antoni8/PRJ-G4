@@ -5,6 +5,11 @@
       conta = conta + 1;
       //document.write(conta);
       var table = document.getElementById("demo");
+      var rowCount = table.rows.length;
+      var rowGood = rowCount - 3;
+      //table.innerHTML=rowGood;
+      if (rowGood>1)
+        table.deleteRow(rowGood);
       //table.write(conta);
       var row = table.insertRow(2);
       var cellref = row.insertCell(0);
