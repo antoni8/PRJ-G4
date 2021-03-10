@@ -1,8 +1,5 @@
 <?php
 
-session_start();
-include 'db.php';
-
 class Producte extends DB{
     public function afegir($nom,$stock,$preu,$descompte,$iva){
         $inserir = "insert into producte (Nom,Stock,Preu,Descompte,IVA) values ('$nom',$stock,$preu,$descompte,$iva)";
@@ -34,6 +31,13 @@ class Producte extends DB{
     public function llistar(){
         $llista = "select * from producte";
         $resultat = $this->db->query($llista);
+        return $resultat;
+    }
+
+    public function getNom($id){
+        $llista = "select Nom from producte where ID=$id";
+        $resultat = $this->db->query($llista);
+        //$resultat = $resultat->fetch_assoc();
         return $resultat;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+include 'esencial.php';
 include 'classes/usuari.php';
 
 if ($_SESSION['login'] == true) {

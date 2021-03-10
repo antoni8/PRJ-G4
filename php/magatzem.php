@@ -6,6 +6,7 @@
 
 <?php
 
+include 'esencial.php';
 include 'classes/producte.php';
 
 $productes = new Producte();

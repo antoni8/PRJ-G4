@@ -1,5 +1,5 @@
 <?php
-
+include 'esencial.php';
 // Classe de db
 /* include 'classes/db.php';
 
@@ -16,7 +16,7 @@ echo "<br>"; */
 //$hola->canviaContra($_SESSION['id'],"patata");
 //var_dump($hola->canviaContra($_SESSION['id'],"patata"));
 
-echo $hola->registrar("41622494S","adria","adrian@adrian.com","Adrian2020","12345678k");
+echo $hola->registrar("41622494S","adria","arian@adrian.com","Adria2020","Adrian2020","12345678k");
 
 // Clase de prodcute
 //include 'classes/producte.php';

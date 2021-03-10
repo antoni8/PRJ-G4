@@ -1,5 +1,6 @@
 <?php
 //error_reporting(0);
+include 'esencial.php';
 include "../html/factura.html";
 $nom=$preu=$descompte=$iva=$import=0;
 $ref=$_GET['referencia'];

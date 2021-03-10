@@ -1,5 +1,8 @@
 <?php
+error_reporting(0);
 include "perfil.php";
+include "classes/producte.php";
+$hola=new Producte();
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,16 +25,17 @@ include "perfil.php";
 		<li class="nav-article-example" role="presentation"><a href="facturaprincipal.php">Factura</a></li>
 		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
+		<li class="nav-author-page" role="presentation"><a href="php/administrar.php">Administrar usuari</a></li>
+    <li class="nav-author-page" role="presentation"><a href="#login">Login</a></li>
 		<span class="socialheader">
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
 		<a href="mailto://amatamalas11837@gmail.com"><span class="symbol">circleemail</span></a>
-		<a href="#login" style="width:25px;"><span class="symbol"><img src="../fotos/perfil.png" style="width:25px;"></span></a>
 		</span>
 	</ul>
 	</nav>
-      	<header class="main-header" <!--style="background-image: url(fotos/logo.png)"-->>
+      	<header class="main-header" style="background-image: url(fotos/fondo_2.jpg)">
       	<div class="vertical">
                 <div class="main-header-content inner">
                         <h1 class="post-title">Once Upon a Time</h1>
@@ -45,9 +49,11 @@ include "perfil.php";
         </div>
         </header>
         <main id="content" class="content" role="main">
-        <div class="wraps">
-<<<<<<< Updated upstream
-        <H2>ALBARÀ</H2>
+	<div class="wraps">
+		<img src="../fotos/shadow.png" class="wrapshadow">
+		<article class="post featured">
+		<section class="post-content">
+		<H2>ALBARÀ</H2>
     <h3>INTRODUEIX EL TEU ALBARÀ</h3>
   <FORM ACTION='' METHOD='GET'>
     <table border="1" id="demo">
@@ -66,7 +72,7 @@ include "perfil.php";
       </tr>
       <tr>
         <td class="ref"><input type='text' name='referència' autofocus></td>
-        <td><?php echo $nom;?></td>
+        <td><?php echo $hola->getNom($_GET['referencia']);?></td>
         <td><input type='text' name='text' value='[vacío]'></td>
         <td><input type='text' name='almacen'></td>
         <td><input type='number' name='quantitat'></td>
@@ -81,70 +87,73 @@ include "perfil.php";
         <td><button type="button" onclick='deleteRow()'>Eliminar fila</button></td>
       </tr>
     </table>
-    <input type="submit">
+    <input type="submit" value="INTRODUEIX LA FACTURA">
     </FORM>
-=======
-                <img src="assets/img/shadow.png" class="wrapshadow">
-                <article class="post featured">
-                <section class="post-content">
-                <p>
-                        One of the important highlights of my experience at Ashok’s was lear>
-                </p>
-                </section>
-                <footer class="post-footer">
-                <figure class="author-image">
-                <a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg">
-                </figure>
-                <section class="author">
-                <h4><a href="">David</a></h4>
-                <p>
-                        The blog combining journalist David&#x27;s years of experience cover
-                </p>
-                <div class="author-meta">
-                        <span class="author-location icon-location">Europe</span>
-                        <span class="author-link icon-link"><a href="https://www.wowthemes.net">
-                </div>
-                </section>
-</section>
-                </footer>
-                <div id="disqus_thread">
-                </div>
-                <script>
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://wowthemesdemo.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
-                        </script>
-                </article>
->>>>>>> Stashed changes
-        </div>
-        </main>
-        <div class="clearfix">
-        </div>
-        <aside class="read-next">
-        <a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="facturaprincipal.php">
-        <section class="post">
-        <h2>The first journey in my life</h2>
-        <p>
-                I had accompanied Ashok on several occasions earlier to the glass shop and w>
-        </p>
-        </section>
-        </a>
-        <a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="facturaprincipal.php">
-        <section class="post">
-        <h2>Few days at his shop</h2>
-        <p>
-                Ashok’s shop is not very large. It is a two-roomed shop on the ground floor >
-        </p>
-        </section>
-        </a>
-        </aside>
-        <footer class="site-footer clearfix">
+		</section>
+		<footer class="post-footer">
+		<figure class="author-image">
+		<a class="img" href="author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg"><span class="hidden">David's Picture</span></a>
+		</figure>
+		<section class="author">
+		<h4><a href="../nectaria/author/ghosty/">David</a></h4>
+		<p>
+			The blog combining journalist David&#x27;s years of experience covering fashion and culture for among others. Read my blog and you will learn how to become a fashion editor
+		</p>
+		<div class="author-meta">
+			<span class="author-location icon-location">Europe</span>
+			<span class="author-link icon-link"><a href="https://www.wowthemes.net">https://www.wowthemes.net</a></span>
+		</div>
+		</section><br>
+		<section class="share">
+		<h4>Share this post</h4>
+		<a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Once%20Upon%20a%20Time&amp;url=#" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+		<span class="hidden">Twitter</span>
+		</a>
+		<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=#" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+		<span class="hidden">Facebook</span>
+		</a>
+		<a class="icon-google-plus" href="https://plus.google.com/share?url=#" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+		<span class="hidden">Google+</span>
+		</a>
+    </section>
+		</footer>
+		<div id="disqus_thread">
+		</div>
+		<script>
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://wowthemesdemo.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+		</article>
+	</div>
+	</main>
+	<div class="clearfix">
+	</div>
+	<aside class="read-next">
+	<a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="article.html">
+	<section class="post">
+	<h2>The first journey in my life</h2>
+	<p>
+		I had accompanied Ashok on several occasions earlier to the glass shop and watched as he ordered glass explaining&hellip;
+	</p>
+	</section>
+	</a>
+	<a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="article.html">
+	<section class="post">
+	<h2>Few days at his shop</h2>
+	<p>
+		Ashok’s shop is not very large. It is a two-roomed shop on the ground floor of the Gomes&hellip;
+	</p>
+	</section>
+	</a>
+	</aside>
+	<footer class="site-footer clearfix">
 	<a href="#top" id="back-to-top" class="back-top"></a>
 	<div class="text-center">
-		<a href="../index.php">A&sup2;, SL</a> &copy; 2021<br>
+		<a href="index.php">A&sup2;, SL</a> &copy; 2021<br>
 		<p>Tel. xxxxxxxxx o yyyyyyyyy| email: amatamalas11837@alumnes.iesmanacot.cat o acuevasdela14713@alumnes.iesmanacor.cat</p>
 	</div>
 	</footer>
@@ -211,6 +220,7 @@ include "perfil.php";
     <div class='modal-content'>
       <header class='container'>
         <a href='facturaprincipal.php' class='closebtn'>x</a>
+        <img src='../fotos/perfil.png' style='width:25%;'>
         <h1><?php echo $info['Nom'];?></h1>
         <h4><p><?php echo $info['NomE'];?></p></h4>
       </header>
@@ -222,6 +232,26 @@ include "perfil.php";
       </div>
       <footer class='container'>
 	<button><a href='cerrar.php'>Tanca sessió</a></button>
+      </footer>
+    </div>
+  </div>
+</div>
+<div id='administrar' class='administrar'>
+   <div class='modal-dialog'>
+    <div class='modal-content'>
+      <header class='container'>
+        <a href='index.php' class='closebtn'>x</a>
+        <h1><?php echo $info['Nom'];?></h1>
+        <h4><p><?php echo $info['NomE'];?></p></h4>
+      </header>
+      <div class='container'>
+	<p>DNI: <?php echo $info['DNI'];?></p>
+	<p>Correu electrònic: <?php echo $info['Correu'];?></p>
+	<p>Rol: <?php echo $info['Rol'];?></p>
+	<a href='php/canviarcontrasenya.php'>Canvia la contrasenya</a>
+      </div>
+      <footer class='container'>
+	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
       </footer>
     </div>
   </div>

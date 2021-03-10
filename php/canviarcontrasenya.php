@@ -2,6 +2,7 @@
 /* error_reporting(0); */
 
 include 'classes/usuari.php';
+include 'esencial.php';
 
 if (isset($_GET)) {
   $comprovar = new Usuari();

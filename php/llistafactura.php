@@ -1,5 +1,6 @@
 <?php
 
+include 'esencial.php';
 include 'classes/factura.php';
 include 'classes/liniafactura.php';
 

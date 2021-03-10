@@ -8,8 +8,8 @@
       var rowCount = table.rows.length;
       var rowGood = rowCount - 3;
       //table.innerHTML=rowGood;
-      if (rowGood>1)
-        table.deleteRow(rowGood);
+      /*if (rowGood>1)
+        table.deleteRow(rowGood);*/
       //table.write(conta);
       var row = table.insertRow(2);
       var cellref = row.insertCell(0);
@@ -23,7 +23,7 @@
       var cellimp = row.insertCell(8);
       //var cellchck = row.insertCell(9);
       cellref.innerHTML = "<input type='text' name='referencia'>";
-      cellnom.innerHTML = "<?php echo $nom;?>";
+      cellnom.innerHTML = "<?php echo $hola->getNom($_GET['referencia']);?>";
       celltxt.innerHTML = "<input type='text' name='text' value='[vacío]'>";
       cellalm.innerHTML = "<input type='text' name='almacen'>";
       cellqtt.innerHTML = "<input type='number' name='quantitat'>";

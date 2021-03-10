@@ -1,7 +1,5 @@
 <?php
 
-include 'db.php';
-
 class Empresa extends DB{
     public function afegir($NIF,$nom,$adreça,$telefon){
         $inserir = "insert into EMPRESA (NIF,Nom,Adreça,Telèfon) values ('$NIF','$nom','$adreça','$telefon')";

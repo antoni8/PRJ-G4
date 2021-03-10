@@ -1,8 +1,5 @@
 <?php
 
-session_start();
-include 'db.php';
-
 class Usuari extends DB{
   public function comprovar($correu){
     $comprovacio = "select * from usuari where Correu='$correu'";
@@ -41,14 +38,16 @@ class Usuari extends DB{
   public function registrar($DNI,$nom,$correu,$contrasenya,$empresa){
     if ($this->comprovar($correu) == 1) {
       return 0;
-      exit;
     }
-    $contrasenya = md5($contrasenya);
-    $nou = "insert into usuari (DNI,Nom,Correu,Contrasenya,NIF_Empresa) values ('$DNI','$nom','$correu','$contrasenya','$empresa')";
+    $dni = "select DNI from usuari where DNI='$DNI'";
+    $dni = $this->db->query($dni);
+    if ($dni->num_rows == 1) {
+      return 3;
+    }
+    $contrasenya_enc = md5($contrasenya);
+    $nou = "insert into usuari (DNI,Nom,Correu,Contrasenya,NIF_Empresa) values ('$DNI','$nom','$correu','$contrasenya_enc','$empresa')";
     if ($this->db->query($nou) == TRUE) {
-      return "Nova linia inserida";
-    } else {
-      return "Error".$nou."<br>".$this->db->error;
+      return 1;
     }
   }
 

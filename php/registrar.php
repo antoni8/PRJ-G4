@@ -1,18 +1,31 @@
 <?php
 
+include 'esencial.php';
 include 'classes/usuari.php';
 
 if ($_GET) {
     $DNI = $_GET['dni'];
     $nom = $_GET['nom'];
     $correu = $_GET['correu'];
-    $contrasenya = $_GET['contrasenyar'];
+    $contrasenyao = $_GET['contrasenyao'];
+    $contrasenyar = $_GET['contrasenyar'];
     $empresa = $_GET['empresa'];
 
-    $registrar = new Usuari();
+    if ($contrasenyao == $contrasenyar) {
+        header("Location: error.php?error2=contra2#registrar");
+    }
 
-    echo $registrar->registrar($DNI,$nom,$correu,$contrasenya,$empresa);
-    header("Location: ../html/perfil.php");
+    $registrar = new Usuari();
+    $registrar = $registrar->registrar($DNI,$nom,$correu,$contrasenyar,$empresa);
+
+    if ($registrar == 0) {
+        header("Location: error.php?error2=correu2#registrar");
+    }
+    if ($registrar == 3) {
+        header("Location: error.php?error2=dni#registrar");
+    } else {
+        header("Location: ../index.php");
+    }
 }
 
 ?>

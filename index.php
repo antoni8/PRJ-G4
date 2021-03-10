@@ -1,7 +1,5 @@
 <?php
-if (isset($_SESSION['login']) == true){
-	include "php/perfil.php";
-}
+include "php/perfil.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,16 +22,17 @@ if (isset($_SESSION['login']) == true){
 		<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>
 		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
+		<li class="nav-home nav-current" role="presentation"><a href="#administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
 		<a href="mailto://amatamalas11837@gmail.com"><span class='symbol'>circleemail</span></a>
-		<a href="#login" style="width:25px;"><span class='symbol'><img src='fotos/perfil.png' style="width:25px;"></span></a>
+		<a href="#login" style="width:46px;height: 52.5px;"><span class='symbol'><img src='fotos/perfil.png' style="width:2.5%;height:30px"></span></a>
 		</span>
 	</ul>
 	</nav>
-	<header class="main-header" <!--style="background-image: url(fotos/logo.png)"-->>
+	<header class="main-header" style="background-image: url('fotos/fondo_2.jpg')">
 	<div class="vertical">
 		<div class="main-header-content inner">
 			<h1 class="page-title"></h1>
@@ -47,21 +46,21 @@ if (isset($_SESSION['login']) == true){
 	</header>
 	<main id="content" class="content" role="main">
 	<div class="wraps">
-		<img src="assets/img/shadow.png" class="wrapshadow">
+		<img src="fotos/shadow.png" class="wrapshadow">
 		<div class="grid">
 			<div class="grid-item">
 				<article class="post">
 				<div class="wrapgriditem">
 					<header class="post-header">
-					<h2 class="post-title"><a href="article.html">Retro &amp; New</a></h2>
+					<h2 class="post-title"><a href="article.html">ADRIÀ</a></h2>
 					</header>
 					<section class="post-excerpt">
 					<p>
-						The house of Dr. Marsh being fully occupied, we made our beds in a shed, a short distance from it. Suspended from one of the poles <a class="read-more" href="/retro-is-the-new-modern/">&raquo;</a>
+						INFORMACIÓ PROFESSIONAL:
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
+					<img class="author-thumb" src="" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
 					</footer>
@@ -70,7 +69,7 @@ if (isset($_SESSION['login']) == true){
 			</div>
 			<div class="grid-item">
 				<article class="post tag-romance">
-				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j2-520x780-520x600.jpg"></a>
+				<a href="article.html"><img src=""></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">Dare to try, dare to explore</a></h2>
@@ -269,7 +268,18 @@ if (isset($_SESSION['login']) == true){
 	  Confirma la teva contrasenya:
           <input type="password" name="contrasenyar"><br>
 	  Introdueix la teva empresa:
-	  <input type="text" name="empresa">
+	  <input type="text" name="empresa"><br>
+	  <?php
+		if (isset($_GET['dni']) == 'dni') {
+			echo "El DNI ja ha sigut registrat";
+		}
+		if (isset($_GET['correu']) == 'correu') {
+			echo "El correu ja ha sigut registrat";
+		}
+		if (isset($_GET['contra']) == 'contra') {
+			echo "El DNI ja ha sigut registrat";
+		}
+	  ?>
       </div>
       <footer class="container">
         <input type="submit" value="REGISTRA'T">
@@ -310,6 +320,26 @@ if (isset($_SESSION['login']) == true){
   </div>
 </div>
 <div id='perfil' class='perfil'>
+   <div class='modal-dialog'>
+    <div class='modal-content'>
+      <header class='container'>
+        <a href='index.php' class='closebtn'>x</a>
+        <h1><?php echo $info['Nom'];?></h1>
+        <h4><p><?php echo $info['NomE'];?></p></h4>
+      </header>
+      <div class='container'>
+	<p>DNI: <?php echo $info['DNI'];?></p>
+	<p>Correu electrònic: <?php echo $info['Correu'];?></p>
+	<p>Rol: <?php echo $info['Rol'];?></p>
+	<a href='php/canviarcontrasenya.php'>Canvia la contrasenya</a>
+      </div>
+      <footer class='container'>
+	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
+      </footer>
+    </div>
+  </div>
+</div>
+<div id='administrar' class='administrar'>
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>

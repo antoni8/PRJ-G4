@@ -1,8 +1,5 @@
 <?php
 
-include 'db.php';
-session_start();
-
 class Factura extends DB{
     public function novaFactura($data,$NIF){
         $inserir = "insert into FACTURA (Data,NIF_Empresa) values ('$data','$NIF')";
