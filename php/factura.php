@@ -1,10 +1,11 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 include "perfil.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="../fotos/logo.png">
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>A&sup2; - FACTURA</title>
@@ -24,10 +25,12 @@ include "perfil.php";
     <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
 		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
-		<a href="#registrar"><span class='symbol'>Registrar</span></a>
-		<a href="#login"><span class='symbol'>Login</span></a>
+			<?php if ($_SESSION['login']==true){
+		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
+		echo "<a href='#login'><span class='symbol'>Login</span></a>";
+		}?>
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
@@ -35,7 +38,7 @@ include "perfil.php";
 		</span>
 	</ul>
 	</nav>
-      	<header class="main-header" style="background-image: url(../fotos/logo.png)">
+      	<header class="main-header" style="background-image: url(../fotos/2.jpg)">
       	<div class="vertical">
                 <div class="main-header-content inner">
                         <h1 class="post-title">Administració de facturació</h1>
@@ -44,81 +47,85 @@ include "perfil.php";
                         </div>
                 </div>
         </div>
+		<a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
         </header>
         <main id="content" class="content" role="main">
 	<div class="wraps">
 		<!--<img src="../fotos/shadow.png" class="wrapshadow">-->
 		<article class="post featured">
 		<section class="post-content">
+		<table>
         <?php
 
 include 'classes/factura.php';
 include 'classes/liniafactura.php';
+if ($_SESSION['rol'] == 'Administrador' or $_SESSION['rol'] == 'Lector' or $_SESSION['rol'] == 'Editor') {
+  $factures = new Factura();
+  $factures = $factures->llistarFactures($_SESSION['nif']);
+      
+      foreach ($factures as $factura) {
+          echo "<tr><th>ID</th><th>Data</th><th>Preu Total</th></tr>";
+          echo "<tr>";
+          echo "<td>";
+          echo $factura['ID'];
+          echo "</td>";
 
-$factures = new Factura();
-$factures = $factures->llistarFactures($_SESSION['nif']);
-echo "<table>";
-    
-    foreach ($factures as $factura) {
-        echo "<tr><th>ID</th><th>Data</th><th>Preu Total</th></tr>";
-        echo "<tr>";
-        echo "<td>";
-        echo $factura['ID'];
-        echo "</td>";
+          echo "<td>";
+          echo $factura['Data'];
+          echo "</td>";
 
-        echo "<td>";
-        echo $factura['Data'];
-        echo "</td>";
+          echo "<td>";
+          echo $factura['PreuTotal'];
+          echo "</td>";
 
-        echo "<td>";
-        echo $factura['PreuTotal'];
-        echo "</td>";
+          echo "<td>";
+          echo "<a href='eliminaFactura.php?id=".$factura['ID']."'>Elimina la factura</a><br>";
+          echo "</td>";
 
-        echo "<td>";
-        echo "<a href='eliminaFactura.php?id=".$factura['ID']."'>Elimina la factura</a><br>";
-        echo "</td>";
+          echo "</tr>";
 
-        echo "</tr>";
+          echo "<tr>";
 
-        echo "<tr>";
+          echo "<tr><th>ID</th><th>ID Producte</th><th>Nom</th><th>Quantitat</th><th>Preu</th></tr>";
 
-        echo "<tr><th>ID</th><th>ID Producte</th><th>Nom</th><th>Quantitat</th><th>Preu</th></tr>";
+          $linia = new LiniaFactura();
+          $linia = $linia->llistarLiniesFactura($factura['ID']);
+          
+          foreach ($linia as $individual) {
+              echo "<tr style='border-bottom:solid black';>";
 
-        $linia = new LiniaFactura();
-        $linia = $linia->llistarLiniesFactura($factura['ID']);
-        
-        foreach ($linia as $individual) {
-            echo "<tr style='border-bottom:solid black';>";
+              echo "<td>";
+              echo $individual['ID'];
+              echo "</td>";
 
-            echo "<td>";
-            echo $individual['ID'];
-            echo "</td>";
+              echo "<td>";
+              echo $individual['ID_Producte'];
+              echo "</td>";
 
-            echo "<td>";
-            echo $individual['ID_Producte'];
-            echo "</td>";
+              echo "<td>";
+              echo $individual['Nom'];
+              echo "</td>";
 
-            echo "<td>";
-            echo $individual['Nom'];
-            echo "</td>";
+              echo "<td>";
+              echo $individual['Quantitat'];
+              echo "</td>";
 
-            echo "<td>";
-            echo $individual['Quantitat'];
-            echo "</td>";
+              echo "<td>";
+              echo $individual['PreuTotal'];
+              echo "</td>";
+              echo "</tr>";
 
-            echo "<td>";
-            echo $individual['PreuTotal'];
-            echo "</td>";
-            echo "</tr>";
+          }
 
-        }
+          echo "</tr>";
 
-        echo "</tr>";
+          
+      }
 
-        
-    }
-
-    echo "</table>";
+      echo "</table>";
+} else {
+  echo "Has d'estar registrat per poder veure les factures";
+}
 ?>
     </table>
     </p>
@@ -152,7 +159,8 @@ echo "<table>";
 	<a href="#top" id="back-to-top" class="back-top"></a>
 	<div class="text-center">
 		<a href="index.php">A&sup2;, SL</a> &copy; 2021<br>
-		<p>Tel. xxxxxxxxx o yyyyyyyyy| email: amatamalas11837@alumnes.iesmanacot.cat o acuevasdela14713@alumnes.iesmanacor.cat</p>
+		<p>Antoni: Tel. xxxxxxxxx | email: amatamalas11837@alumnes.iesmanacot.cat</p>
+    <p>Adrià: Tel. yyyyyyyyy| email: acuevasdela14713@alumnes.iesmanacor.cat</p>
 	</div>
 	</footer>
 </div>

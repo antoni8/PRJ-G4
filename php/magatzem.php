@@ -1,10 +1,11 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 include "perfil.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="../fotos/logo.png">
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>A&sup2; - MAGATZEM</title>
@@ -24,10 +25,12 @@ include "perfil.php";
     <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
 		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
-		<a href="#registrar"><span class='symbol'>Registrar</span></a>
-		<a href="#login"><span class='symbol'>Login</span></a>
+			<?php if ($_SESSION['login']==true){
+		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
+		echo "<a href='#login'><span class='symbol'>Login</span></a>";
+		}?>
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
@@ -35,7 +38,7 @@ include "perfil.php";
 		</span>
 	</ul>
 	</nav>
-      	<header class="main-header" style="background-image: url(../fotos/fondo_1.jpg)">
+      	<header class="main-header" style="background-image: url(../fotos/8.jpg)">
       	<div class="vertical">
                 <div class="main-header-content inner">
                         <h1 class="post-title">Administració de l'Stock</h1>
@@ -44,6 +47,7 @@ include "perfil.php";
                         </div>
                 </div>
         </div>
+        <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
         </header>
         <main id="content" class="content" role="main">
 	<div class="wraps">
@@ -100,9 +104,11 @@ foreach ($productes as $individual) {
     }
     echo "</tr>";
 }?>
+    <tr><td style="colspan:6;text-align:center;"><a href="#intropro" style="text-decoration:none;">INTRODUEIX UN PRODUCTE</a></td></tr>
     </table>
     </p>
 		</section>
+    <span class="intropro"></span>
 	</div>
 	</main>
 	<div class="clearfix">
@@ -111,17 +117,11 @@ foreach ($productes as $individual) {
 	<a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="factura.php">
 	<section class="post">
 	<h2>Factures</h2>
-	<p>
-		I had accompanied Ashok on several occasions earlier to the glass shop and watched as he ordered glass explaining&hellip;
-	</p>
 	</section>
 	</a>
 	<a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="administrar.php">
 	<section class="post">
 	<h2>Administració de usuaris</h2>
-	<p>
-		Ashok’s shop is not very large. It is a two-roomed shop on the ground floor of the Gomes&hellip;
-	</p>
 	</section>
 	</a>
 	</aside>
@@ -182,7 +182,31 @@ foreach ($productes as $individual) {
           <input type='password' name='contrasenya'><br>
 	  <a href='#rempwd'>Recordar contrasenya</a>
           <a href='#registrar'>Registrar-se</a>
+      </div><div id='rempwd' class='rempwd'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+    <header class='container'>
+      <a href='magatzem.php' class='closebtn'>x</a>
+      <h2>LOGIN</h2>
+    </header>
+      <div class='container'>
+        <form action='' method='get'>";
+          <input type='password' name='password'><input type='submit' value='VERIFICA'></form>";
+          <?php if (isset($_GET["password"])&(($comprovar->comprovarContra($dni2,$contrasenya2) == true))){
+                echo "<form action='' method='post'>";
+                echo "Indica la nova contrasenya:\n<input type='password' name='contranovao'><br>";
+                echo "Verifica la nova contraseya:\n<input type='password' name='contranovar'><br>";
+                echo "<input type='submit' value='CANVIA'>";
+          }?>
+        </form>
       </div>
+      <footer class='container'>
+        <input type='submit' value='ENTRA'>
+      </footer>
+      </form>
+    </div>
+  </div>
+</div>
       <footer class='container'>
         <input type='submit' value='ENTRA'>
       </footer>
@@ -208,6 +232,33 @@ foreach ($productes as $individual) {
       <footer class='container'>
 	<button><a href='cerrar.php'>Tanca sessió</a></button>
       </footer>
+    </div>
+  </div>
+</div>
+<div id='intropro' class='intropro'>
+   <div class='modal-dialog'>
+    <div class='modal-content'>
+      <header class='container'>
+        <a href='magatzem.php' class='closebtn'>x</a>
+        <h1>Afegir producte</h1>
+      </header>
+      <div class='container'>
+        <form action='afegirProducte.php' method='get'>
+        Introdueix el nom:
+        <input type='text' name='nom'><br>
+        Introdueix l'Stock:
+        <input type='text' name='stock'><br>
+        Introdueix el preu:
+        <input type='text' name='preu'><br>
+        Introdueix el descompte:
+        <input type='text' name='descompte'><br>
+        Introdueix l'IVA:
+        <input type='text' name='iva'><br>
+      </div>
+      <footer class='container'>
+        <input type='submit' value='Afegeix el producte'>
+      </footer>
+      </form>
     </div>
   </div>
 </div>

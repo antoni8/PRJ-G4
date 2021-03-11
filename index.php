@@ -25,8 +25,12 @@ include "php/perfil.php";
     <li class="nav-about-us" role="presentation"><a href="php/factura.php">Factures</a></li>
 		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="php/administrar.php">Administrar usuaris</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
+			<?php if ($_SESSION['login']==true){
+		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
+		echo "<a href='#login'><span class='symbol'>Login</span></a>";
+		}?>
 		<a href="#registrar"><span class='symbol'>Registrar</span></a>
 		<a href="#login"><span class='symbol'>Login</span></a>
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
@@ -36,7 +40,7 @@ include "php/perfil.php";
 		</span>
 	</ul>
 	</nav>
-	<header class="main-header" style="background-image: url('fotos/fondo_2.jpg')">
+	<header class="main-header" style="background-image: url('fotos/1.jpg')">
 	<div class="vertical">
 		<div class="main-header-content inner">
 			<h1 class="page-title"></h1>
@@ -64,7 +68,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
 					</footer>
@@ -73,7 +76,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post tag-romance">
-				<a href="article.html"><img src=""></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">Dare to try, dare to explore</a></h2>
@@ -84,7 +86,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					on <a href="#">romance</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
@@ -104,7 +105,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
 					</footer>
@@ -113,7 +113,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post tag-romance">
-				<a href="/having-a-first-chance/"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j5-520x780-520x600.jpg"></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">Having a first chance</a></h2>
@@ -124,7 +123,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					on <a href="#">romance</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
@@ -134,7 +132,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post tag-romance featured">
-				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j3-320x320.jpg"></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">Trending Colors</a></h2>
@@ -145,7 +142,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					on <a href="#">romance</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
@@ -155,7 +151,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post">
-				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j8-520x780-520x600.jpg"></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">What we saw in California</a></h2>
@@ -166,7 +161,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
 					</footer>
@@ -175,7 +169,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post tag-romance">
-				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/30160348/sep4.jpg"></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">Shadows &amp; Lights</a></h2>
@@ -186,7 +179,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					on <a href="#">romance</a>
 					<time class="post-date" datetime="2016-12-18">18 December 2016</time>
@@ -196,7 +188,6 @@ include "php/perfil.php";
 			</div>
 			<div class="grid-item">
 				<article class="post featured">
-				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j12-520x668-520x600.jpg"></a>
 				<div class="wrapgriditem">
 					<header class="post-header">
 					<h2 class="post-title"><a href="article.html">The Book of Delight</a></h2>
@@ -207,7 +198,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-14">14 December 2016</time>
 					</footer>
@@ -226,7 +216,6 @@ include "php/perfil.php";
 					</p>
 					</section>
 					<footer class="post-meta">
-					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="David" nopin="nopin"/>
 					<a href="author.html">David</a>
 					<time class="post-date" datetime="2016-12-14">14 December 2016</time>
 					</footer>
@@ -240,7 +229,8 @@ include "php/perfil.php";
 	<a href="#top" id="back-to-top" class="back-top"></a>
 	<div class="text-center">
 		<a href="index.php">A&sup2;, SL</a> &copy; 2021<br>
-		<p>Tel. xxxxxxxxx o yyyyyyyyy| email: amatamalas11837@alumnes.iesmanacot.cat o acuevasdela14713@alumnes.iesmanacor.cat</p>
+		<p>Antoni: Tel. xxxxxxxxx | email: amatamalas11837@alumnes.iesmanacot.cat</p>
+    <p>Adrià: Tel. yyyyyyyyy| email: acuevasdela14713@alumnes.iesmanacor.cat</p>
 	</div>
 	</footer>
 </div>
