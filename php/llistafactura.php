@@ -78,7 +78,5 @@ echo "<table>";
     }
 
     echo "</table>";
-echo "
-</body>
-</html>";
+    echo "</body></html>";
 ?>

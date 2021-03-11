@@ -6,7 +6,7 @@ error_reporting(0);
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>A&sup2; - MAGATZEM</title>
+<title>A&sup2; - ADMINISTRAR</title>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="shortcut icon" href="#">
@@ -36,7 +36,7 @@ error_reporting(0);
       	<header class="main-header" style="background-image: url(../fotos/fondo_1.jpg)">
       	<div class="vertical">
                 <div class="main-header-content inner">
-                        <h1 class="post-title">Administració de l'Stock</h1>
+                        <h1 class="post-title">Administració d'usuaris</h1>
                         <div class="entry-title-divider">
                                 <span></span><span></span><span></span>
                         </div>
@@ -48,96 +48,60 @@ error_reporting(0);
 		<!--<img src="../fotos/shadow.png" class="wrapshadow">-->
 		<article class="post featured">
 		<section class="post-content">
-    <p>
-		<!--<H2>ALBARÀ</H2>
-    <h3>INTRODUEIX EL TEU ALBARÀ</h3>
-  <FORM ACTION='' METHOD='GET'>
-    <table border="1" id="demo">
-      <tr><input type="date" name="data">
-      <tr>
-        <td>Referencia</td>
-        <td>Nombre</td>
-        <td>Texto</td>
-        <td>Almacén</td>
-        <td>Cantidad</td>
-        <td>Precio</td>
-        <td>Dto.</td>
-        <td>IVA</td>
-        <td>Importe</td>
-        <td>Tria</td>
-      </tr>
-      <tr>
-        <td class="ref"><input type='text' name='referència' autofocus></td>
-        <td><?php //echo $hola->getNom($_GET['referencia']);?></td>
-        <td><input type='text' name='text' value='[vacío]'></td>
-        <td><input type='text' name='almacen'></td>
-        <td><input type='number' name='quantitat'></td>
-        <td><?php //echo $preu;?></td>
-        <td><?php //echo $descompte;?></td>
-        <td><?php //echo $iva;?></td>
-        <td><?php //echo $import;?></td>
-        <td><input type="checkbox" name="check"></td>
-      </tr>
-      <tr>
-        <td><button type="button" onclick='addRow()'>Añadir fila</button></td>
-        <td><button type="button" onclick='deleteRow()'>Eliminar fila</button></td>
-      </tr>
-    </table>
-    <input type="submit" value="INTRODUEIX LA FACTURA">
-    </FORM>-->
-    <h1>Stock</h1>
-    <table class='customers'>
-      <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Stock</th>
-        <th>Preu</th>
-        <th>Descompte</th>
-        <th>IVA</th>
-      </tr>
-    <?php
+      <header class='container'>
+        <h4>Administrar usuaris</h4>
+      </header>
+      <div class='container'>
+		<?php
+			if (isset($_SESSION['id']) == true) {
+				$usuaris = new Usuari();
+				$usuaris = $usuaris->llistar();
 
-    include 'esencial.php';
-    include 'classes/producte.php';
+				echo "<table>";
+				echo "<tr><th>DNI</th><th>Nom</th><th>Correu</th><th>Rol actual</th><th>Nou rol</th></tr>";
 
-    $productes = new Producte();
-$productes = $productes->llistar();
+				foreach ($usuaris as $usuari) {
+					echo "<tr>";
 
-foreach ($productes as $individual) {
-    echo "<tr>";
-    echo "<td>";
-    echo $individual['ID'];
-    echo "</td>";
+					echo "<td>";
+					echo $usuari['DNI'];
+					echo "</td>";
 
-    echo "<td>";
-    echo $individual['Nom'];
-    echo "</td>";
+					echo "<td>";
+					echo $usuari['Nom'];
+					echo "</td>";
 
-    echo "<td>";
-    echo $individual['Stock'];
-    echo "</td>";
+					echo "<td>";
+					echo $usuari['Correu'];
+					echo "</td>";
 
-    echo "<td>";
-    echo $individual['Preu'];
-    echo "</td>";
+					echo "<td>";
+					echo $usuari['Rol'];
+					echo "</td>";
 
-    echo "<td>";
-    echo $individual['Descompte'];
-    echo "</td>";
+					echo "<td>";
+					echo "<form action='canviarRol.php?' method='get'>";
+					echo "<select name='rol' id='rol'>";
+					echo "<option value='admin'>Administrador</option>";
+					echo "<option value='editor'>Editor</option>";
+					echo "<option value='lector'>Lector</option>";
+					echo "</select>";
+					echo "<input type='submit' value='Canvia el rol' style='color:black;'>";
+					echo "</form>";
+					echo "</td>";
 
-    echo "<td>";
-    echo $individual['IVA'];
-    echo "</td>";
+					echo "</tr>";
+				}
 
-    if ($_SESSION['rol'] == 'Editor' or $_SESSION['rol'] == 'Administrador') {
-        echo "<td>";
-        echo "<a href=''>Elimina el producte</a>";
-        echo "</td>";
-    }
-    echo "</tr>";
-}?>
-    </table>
-    </p>
+				echo "</table>";
+			} else {
+				echo "No té permisos o no està registrat";
+			}
+		?>
+      </div>
+      <footer class='container'>
+	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
+      </footer>
 		</section>
 		<footer class="post-footer">
 		<figure class="author-image">
