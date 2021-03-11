@@ -1,5 +1,5 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,17 +18,18 @@
 	<nav class="main-nav overlay clearfix">
 	<a class="blog-logo" href="../index.php" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
 	<ul id="menu">
-		<li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
-		<!--<li class="nav-article-example" role="presentation"><a href="facturaprincipal.php">Factura</a></li>-->
-		<li class="nav-about-us" role="presentation"><a href="facturaprincipal.php">Almacén</a></li>
+  <li class="nav-home nav-current" role="presentation"><a href="index.php">Inici</a></li>
+		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
+		<li class="nav-about-us" role="presentation"><a href="php/facturaprincipal.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#administrar.php">Administrar usuari</a></li>
-    <li class="nav-author-page" role="presentation"><a href="#login">Login</a></li>
+		<li class="nav-author-page" role="presentation"><a href="#administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
+		<a href="#registrar"><span class='symbol'>Registrar</span></a>
+		<a href="#login"><span class='symbol'>Login</span></a>
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
-		<a href="mailto://amatamalas11837@gmail.com"><span class="symbol">circleemail</span></a>
+		<a href="mailto://amatamalas11837@gmail.com"><span class='symbol'>circleemail</span></a>
 		</span>
 	</ul>
 	</nav>
@@ -87,6 +88,16 @@
     </table>
     <input type="submit" value="INTRODUEIX LA FACTURA">
     </FORM>-->
+    <h1>Stock</h1>
+    <table class='customers'>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Stock</th>
+        <th>Preu</th>
+        <th>Descompte</th>
+        <th>IVA</th>
+      </tr>
     <?php
 
     include 'esencial.php';
@@ -94,9 +105,7 @@
 
     $productes = new Producte();
 $productes = $productes->llistar();
-echo "<h1>Stock</h1>";
-echo "<table>";
-echo "<tr><th>ID</th><th>Nom</th><th>Stock</th><th>Preu</th><th>Descompte</th><th>IVA</th></tr>";
+
 foreach ($productes as $individual) {
     echo "<tr>";
     echo "<td>";
@@ -128,14 +137,9 @@ foreach ($productes as $individual) {
         echo "<a href=''>Elimina el producte</a>";
         echo "</td>";
     }
-
-    
     echo "</tr>";
-}
-
-echo "</table>";
-
-    ?>
+}?>
+    </table>
     </p>
 		</section>
 		<footer class="post-footer">
@@ -165,8 +169,6 @@ echo "</table>";
 		</a>
     </section>
 		</footer>
-		<div id="disqus_thread">
-		</div>
 		<script>
 			(function() { // DON'T EDIT BELOW THIS LINE
 			var d = document, s = d.createElement('script');
