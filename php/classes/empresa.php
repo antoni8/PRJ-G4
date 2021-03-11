@@ -2,7 +2,7 @@
 
 class Empresa extends DB{
     public function afegir($NIF,$nom,$adreça,$telefon){
-        $inserir = "insert into EMPRESA (NIF,Nom,Adreça,Telèfon) values ('$NIF','$nom','$adreça','$telefon')";
+        $inserir = "insert into empresa (NIF,Nom,Adreça,Telèfon) values ('$NIF','$nom','$adreça','$telefon')";
         if ($this->db->query($inserir) == TRUE) {
             return "S'ha inserit la empresa";
         } else {
@@ -11,7 +11,7 @@ class Empresa extends DB{
     }
 
     public function borrar($NIF){
-        $borrar = "delete from EMPRESA where NIF = '$NIF'";
+        $borrar = "delete from empresa where NIF = '$NIF'";
         if ($this->db->query($borrar) == TRUE) {
             return "Empresa borrada";
         } else {

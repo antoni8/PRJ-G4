@@ -100,6 +100,11 @@ class Usuari extends DB{
     $canviar = $this->db->query($canviar);
   }
 
+  public function eliminar($dni){
+    $eliminar = "delete from usuari where DNI = '$dni'";
+    $eliminar = $this->db->query($eliminar);
+  }
+
 }
 
  ?>

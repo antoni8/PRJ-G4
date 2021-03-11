@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-include "php/perfil.php";
+//error_reporting(0);
+include "perfil.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,42 +51,6 @@ include "php/perfil.php";
 		<article class="post featured">
 		<section class="post-content">
     <p>
-		<!--<H2>ALBARÀ</H2>
-    <h3>INTRODUEIX EL TEU ALBARÀ</h3>
-  <FORM ACTION='' METHOD='GET'>
-    <table border="1" id="demo">
-      <tr><input type="date" name="data">
-      <tr>
-        <td>Referencia</td>
-        <td>Nombre</td>
-        <td>Texto</td>
-        <td>Almacén</td>
-        <td>Cantidad</td>
-        <td>Precio</td>
-        <td>Dto.</td>
-        <td>IVA</td>
-        <td>Importe</td>
-        <td>Tria</td>
-      </tr>
-      <tr>
-        <td class="ref"><input type='text' name='referència' autofocus></td>
-        <td><?php //echo $hola->getNom($_GET['referencia']);?></td>
-        <td><input type='text' name='text' value='[vacío]'></td>
-        <td><input type='text' name='almacen'></td>
-        <td><input type='number' name='quantitat'></td>
-        <td><?php //echo $preu;?></td>
-        <td><?php //echo $descompte;?></td>
-        <td><?php //echo $iva;?></td>
-        <td><?php //echo $import;?></td>
-        <td><input type="checkbox" name="check"></td>
-      </tr>
-      <tr>
-        <td><button type="button" onclick='addRow()'>Añadir fila</button></td>
-        <td><button type="button" onclick='deleteRow()'>Eliminar fila</button></td>
-      </tr>
-    </table>
-    <input type="submit" value="INTRODUEIX LA FACTURA">
-    </FORM>-->
     <h1>Stock</h1>
     <table class='customers'>
       <tr>
@@ -98,8 +62,6 @@ include "php/perfil.php";
         <th>IVA</th>
       </tr>
     <?php
-
-    include 'esencial.php';
     include 'classes/producte.php';
 
     $productes = new Producte();
@@ -133,7 +95,7 @@ foreach ($productes as $individual) {
 
     if ($_SESSION['rol'] == 'Editor' or $_SESSION['rol'] == 'Administrador') {
         echo "<td>";
-        echo "<a href=''>Elimina el producte</a>";
+        echo "<a href='eliminaProducte.php?id=".$individual['ID']."'>Elimina el producte</a>";
         echo "</td>";
     }
     echo "</tr>";
@@ -141,42 +103,6 @@ foreach ($productes as $individual) {
     </table>
     </p>
 		</section>
-		<footer class="post-footer">
-		<figure class="author-image">
-		<a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg"><span class="hidden">David's Picture</span></a>
-		</figure>
-		<section class="author">
-		<h4><a href="../nectaria/author/ghosty/">David</a></h4>
-		<p>
-			The blog combining journalist David&#x27;s years of experience covering fashion and culture for among others. Read my blog and you will learn how to become a fashion editor
-		</p>
-		<div class="author-meta">
-			<span class="author-location icon-location">Europe</span>
-			<span class="author-link icon-link"><a href="https://www.wowthemes.net">https://www.wowthemes.net</a></span>
-		</div>
-		</section><br>
-		<section class="share">
-		<h4>Share this post</h4>
-		<a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Once%20Upon%20a%20Time&amp;url=#" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-		<span class="hidden">Twitter</span>
-		</a>
-		<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=#" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-		<span class="hidden">Facebook</span>
-		</a>
-		<a class="icon-google-plus" href="https://plus.google.com/share?url=#" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-		<span class="hidden">Google+</span>
-		</a>
-    </section>
-		</footer>
-		<script>
-			(function() { // DON'T EDIT BELOW THIS LINE
-			var d = document, s = d.createElement('script');
-			s.src = 'https://wowthemesdemo.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
-			})();
-			</script>
-		</article>
 	</div>
 	</main>
 	<div class="clearfix">

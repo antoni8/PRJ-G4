@@ -234,10 +234,6 @@ include "php/perfil.php";
 				</article>
 			</div>
 		</div>
-		<nav class="pagination" role="navigation">
-		<span class="page-number">Page 1 of 2</span>
-		<a class="older-posts" href="page2.html">Older Posts &rarr;</a>
-		</nav>
 	</div>
 	</main>
 	<footer class="site-footer clearfix">
@@ -304,15 +300,15 @@ include "php/perfil.php";
           Introdueix el teu correu electrònic:
           <input type='email' name='correu'><br>
           Introdueix la teva contrasenya:
-          <input type='password' name='contrasenya'><br>
-	  <a href='#rempwd'>Recordar contrasenya</a>
-          <a href='#registrar'>Registrar-se</a><br>
+          <input type='password' name='contrasenya'>
+	  	  <a href='#rempwd'>Has olvidat la teva contrasenya?</a><br>
+          <h6><a href='#registrar'>Registrar-se</a></h6>
 		  <?php
 			if (isset($_GET['error']) == 'correu'){
 				echo "El correu no està registrat";
 			}
 			if (isset($_GET['error2']) == 'contra') {
-				echo "La contrasenta no és correcte";
+				echo "La contrasenya no és correcte";
 			}
 		  ?>
       </div>

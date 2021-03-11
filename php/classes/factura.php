@@ -11,7 +11,10 @@ class Factura extends DB{
     }
 
     public function borrarFactura($id){
-        
+        $eliminaLiniaFactura = "delete from linia_factura where ID_Factura = $id";
+        $eliminarFactura = "delete from factura where ID = $id";
+        $this->db->query($eliminaLiniaFactura);
+        $this->db->query($eliminarFactura);
     }
 
     public function llistarFactures($nif){

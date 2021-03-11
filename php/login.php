@@ -14,7 +14,7 @@ if ($_GET) {
     } elseif ($login == 2) {
         header("Location: error.php?error2=contra");
     } else {
-        header("Location: ../index.php#perfil");
+        header("Location: ../index.php");
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-include "php/perfil.php";
+//error_reporting(0);
+include "perfil.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,8 @@ include "php/perfil.php";
 	<ul id="menu">
   <li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
 		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
-		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Almacén</a></li>
+    <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
+		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
@@ -34,7 +35,7 @@ include "php/perfil.php";
 		</span>
 	</ul>
 	</nav>
-      	<header class="main-header" style="background-image: url(../fotos/fondo_1.jpg)">
+      	<header class="main-header" style="background-image: url(../fotos/descargar.jpg)">
       	<div class="vertical">
                 <div class="main-header-content inner">
                         <h1 class="post-title">Administració d'usuaris</h1>
@@ -49,17 +50,15 @@ include "php/perfil.php";
 		<!--<img src="../fotos/shadow.png" class="wrapshadow">-->
 		<article class="post featured">
 		<section class="post-content">
-      <header class='container'>
         <h4>Administrar usuaris</h4>
-      </header>
       <div class='container'>
 		<?php
-			if (isset($_SESSION['id']) == true) {
+			if ($_SESSION['rol'] == 'Administrador') {
 				$usuaris = new Usuari();
 				$usuaris = $usuaris->llistar();
 
 				echo "<table>";
-				echo "<tr><th>DNI</th><th>Nom</th><th>Correu</th><th>Rol actual</th><th>Nou rol</th></tr>";
+				echo "<tr><th>DNI</th><th>Nom</th><th>Correu</th><th>Rol actual</th><th>Nou rol</th><th>Eliminar</th></tr>";
 
 				foreach ($usuaris as $usuari) {
 					echo "<tr>";
@@ -81,13 +80,21 @@ include "php/perfil.php";
 					echo "</td>";
 
 					echo "<td>";
-					echo "<form action='canviarRol.php?' method='get'>";
+					echo "<form action='canviarRol.php' method='get'>";
 					echo "<select name='rol' id='rol'>";
-					echo "<option value='admin'>Administrador</option>";
-					echo "<option value='editor'>Editor</option>";
-					echo "<option value='lector'>Lector</option>";
+					echo "<option value='Administrador'>Administrador</option>";
+					echo "<option value='Editor'>Editor</option>";
+					echo "<option value='Lector'>Lector</option>";
 					echo "</select>";
+					echo "<input type='hidden' name='dni' value='".$usuari['DNI']."'>";
 					echo "<input type='submit' value='Canvia el rol' style='color:black;'>";
+					echo "</form>";
+					echo "</td>";
+
+					echo "<td>";
+					echo "<form action='eliminarUsuari.php' method='get'>";
+					echo "<input type='hidden' name='dni' value='".$usuari['DNI']."'>";
+					echo "<input type='submit' value='Eliminar usuari' style='color:black'>";
 					echo "</form>";
 					echo "</td>";
 
@@ -100,36 +107,6 @@ include "php/perfil.php";
 			}
 		?>
       </div>
-      <footer class='container'>
-	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
-      </footer>
-		</section>
-		<footer class="post-footer">
-		<figure class="author-image">
-		<a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg"><span class="hidden">David's Picture</span></a>
-		</figure>
-		<section class="author">
-		<h4><a href="../nectaria/author/ghosty/">David</a></h4>
-		<p>
-			The blog combining journalist David&#x27;s years of experience covering fashion and culture for among others. Read my blog and you will learn how to become a fashion editor
-		</p>
-		<div class="author-meta">
-			<span class="author-location icon-location">Europe</span>
-			<span class="author-link icon-link"><a href="https://www.wowthemes.net">https://www.wowthemes.net</a></span>
-		</div>
-		</section><br>
-		<section class="share">
-		<h4>Share this post</h4>
-		<a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Once%20Upon%20a%20Time&amp;url=#" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-		<span class="hidden">Twitter</span>
-		</a>
-		<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=#" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-		<span class="hidden">Facebook</span>
-		</a>
-		<a class="icon-google-plus" href="https://plus.google.com/share?url=#" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-		<span class="hidden">Google+</span>
-		</a>
-    </section>
 		</footer>
 		<script>
 			(function() { // DON'T EDIT BELOW THIS LINE
@@ -148,17 +125,11 @@ include "php/perfil.php";
 	<a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="factura.php">
 	<section class="post">
 	<h2>Factures</h2>
-	<p>
-		I had accompanied Ashok on several occasions earlier to the glass shop and watched as he ordered glass explaining&hellip;
-	</p>
 	</section>
 	</a>
 	<a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="administrar.php">
 	<section class="post">
-	<h2>Administració de usuaris</h2>
-	<p>
-		Ashok’s shop is not very large. It is a two-roomed shop on the ground floor of the Gomes&hellip;
-	</p>
+	<h2>Magatzem</h2>
 	</section>
 	</a>
 	</aside>
@@ -179,7 +150,7 @@ include "php/perfil.php";
   <div class="modal-dialog">
     <div class="modal-content">
       <header class="container">
-        <a href="magatzem.php" class="closebtn">x</a>
+        <a href="administrar.php" class="closebtn">x</a>
         <h2>REGISTRA'T</h2>
       </header>
       <div class="container">
@@ -208,7 +179,7 @@ include "php/perfil.php";
   <div class='modal-dialog'>
     <div class='modal-content'>
     <header class='container'>
-      <a href='magatzem.php' class='closebtn'>x</a>
+      <a href='administrar.php' class='closebtn'>x</a>
       <h2>LOGIN</h2>
     </header>
       <div class='container'>
@@ -231,7 +202,7 @@ include "php/perfil.php";
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>
-        <a href='magatzem.php' class='closebtn'>x</a>
+        <a href='administrar.php' class='closebtn'>x</a>
         <img src='../fotos/perfil.png' style='width:25%;'>
         <h1><?php echo $info['Nom'];?></h1>
         <h4><p><?php echo $info['NomE'];?></p></h4>
