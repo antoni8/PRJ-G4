@@ -19,16 +19,17 @@ include "php/perfil.php";
 	<a class="blog-logo" href="index.php" style="height:64px;width:100px;"><img src="fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="index.php">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>
-		<li class="nav-about-us" role="presentation"><a href="php/magatzem.php">Almacén</a></li>
+		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
+		<li class="nav-about-us" role="presentation"><a href="php/facturaprincipal.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
-		<li class="nav-home nav-current" role="presentation"><a href="#administrar.php">Administrar usuaris</a></li>
+		<li class="nav-author-page" role="presentation"><a href="#administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
+		<a href="#registrar"><span class='symbol'>Registrar</span></a>
+		<a href="#login"><span class='symbol'>Login</span></a>
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
 		<a href="#"><span class='symbol'>circlefacebook</span></a>
 		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
 		<a href="mailto://amatamalas11837@gmail.com"><span class='symbol'>circleemail</span></a>
-		<a href="#login" style="width:46px;height: 52.5px;"><span class='symbol'><img src='fotos/perfil.png' style="width:2.5%;height:30px"></span></a>
 		</span>
 	</ul>
 	</nav>
@@ -277,7 +278,7 @@ include "php/perfil.php";
 			echo "El correu ja ha sigut registrat";
 		}
 		if (isset($_GET['contra']) == 'contra') {
-			echo "El DNI ja ha sigut registrat";
+			echo "Les contrasenyes no coincideixen";
 		}
 	  ?>
       </div>
@@ -324,6 +325,7 @@ include "php/perfil.php";
     <div class='modal-content'>
       <header class='container'>
         <a href='index.php' class='closebtn'>x</a>
+		<img src='fotos/perfil.png' style="width:25%;">
         <h1><?php echo $info['Nom'];?></h1>
         <h4><p><?php echo $info['NomE'];?></p></h4>
       </header>

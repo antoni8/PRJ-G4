@@ -1,8 +1,5 @@
 <?php
-error_reporting(0);
-include "perfil.php";
-include "classes/producte.php";
-$hola=new Producte();
+//error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,10 +19,10 @@ $hola=new Producte();
 	<a class="blog-logo" href="../index.php" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
 	<ul id="menu">
 		<li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
-		<li class="nav-article-example" role="presentation"><a href="facturaprincipal.php">Factura</a></li>
-		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Almacén</a></li>
+		<!--<li class="nav-article-example" role="presentation"><a href="facturaprincipal.php">Factura</a></li>-->
+		<li class="nav-about-us" role="presentation"><a href="facturaprincipal.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
-		<li class="nav-author-page" role="presentation"><a href="php/administrar.php">Administrar usuari</a></li>
+		<li class="nav-author-page" role="presentation"><a href="#administrar.php">Administrar usuari</a></li>
     <li class="nav-author-page" role="presentation"><a href="#login">Login</a></li>
 		<span class="socialheader">
 		<a href="#"><span class='symbol'>circletwitterbird</span></a>
@@ -50,10 +47,11 @@ $hola=new Producte();
         </header>
         <main id="content" class="content" role="main">
 	<div class="wraps">
-		<img src="../fotos/shadow.png" class="wrapshadow">
+		<!--<img src="../fotos/shadow.png" class="wrapshadow">-->
 		<article class="post featured">
 		<section class="post-content">
-		<H2>ALBARÀ</H2>
+    <p>
+		<!--<H2>ALBARÀ</H2>
     <h3>INTRODUEIX EL TEU ALBARÀ</h3>
   <FORM ACTION='' METHOD='GET'>
     <table border="1" id="demo">
@@ -68,19 +66,19 @@ $hola=new Producte();
         <td>Dto.</td>
         <td>IVA</td>
         <td>Importe</td>
-        <!--<td>Tria</td>-->
+        <td>Tria</td>
       </tr>
       <tr>
         <td class="ref"><input type='text' name='referència' autofocus></td>
-        <td><?php echo $hola->getNom($_GET['referencia']);?></td>
+        <td><?php //echo $hola->getNom($_GET['referencia']);?></td>
         <td><input type='text' name='text' value='[vacío]'></td>
         <td><input type='text' name='almacen'></td>
         <td><input type='number' name='quantitat'></td>
-        <td><?php echo $preu;?></td>
-        <td><?php echo $descompte;?></td>
-        <td><?php echo $iva;?></td>
-        <td><?php echo $import;?></td>
-        <!--<td><input type="checkbox" name="check"></td>-->
+        <td><?php //echo $preu;?></td>
+        <td><?php //echo $descompte;?></td>
+        <td><?php //echo $iva;?></td>
+        <td><?php //echo $import;?></td>
+        <td><input type="checkbox" name="check"></td>
       </tr>
       <tr>
         <td><button type="button" onclick='addRow()'>Añadir fila</button></td>
@@ -88,11 +86,61 @@ $hola=new Producte();
       </tr>
     </table>
     <input type="submit" value="INTRODUEIX LA FACTURA">
-    </FORM>
+    </FORM>-->
+    <?php
+
+    include 'esencial.php';
+    include 'classes/producte.php';
+
+    $productes = new Producte();
+$productes = $productes->llistar();
+echo "<h1>Stock</h1>";
+echo "<table>";
+echo "<tr><th>ID</th><th>Nom</th><th>Stock</th><th>Preu</th><th>Descompte</th><th>IVA</th></tr>";
+foreach ($productes as $individual) {
+    echo "<tr>";
+    echo "<td>";
+    echo $individual['ID'];
+    echo "</td>";
+
+    echo "<td>";
+    echo $individual['Nom'];
+    echo "</td>";
+
+    echo "<td>";
+    echo $individual['Stock'];
+    echo "</td>";
+
+    echo "<td>";
+    echo $individual['Preu'];
+    echo "</td>";
+
+    echo "<td>";
+    echo $individual['Descompte'];
+    echo "</td>";
+
+    echo "<td>";
+    echo $individual['IVA'];
+    echo "</td>";
+
+    if ($_SESSION['rol'] == 'Editor' or $_SESSION['rol'] == 'Administrador') {
+        echo "<td>";
+        echo "<a href=''>Elimina el producte</a>";
+        echo "</td>";
+    }
+
+    
+    echo "</tr>";
+}
+
+echo "</table>";
+
+    ?>
+    </p>
 		</section>
 		<footer class="post-footer">
 		<figure class="author-image">
-		<a class="img" href="author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg"><span class="hidden">David's Picture</span></a>
+		<a class="img" href="../nectaria/author.html" style="background-image: url(../nectaria/assets/img/gravatar.jpg"><span class="hidden">David's Picture</span></a>
 		</figure>
 		<section class="author">
 		<h4><a href="../nectaria/author/ghosty/">David</a></h4>

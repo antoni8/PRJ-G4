@@ -1,9 +1,3 @@
-<html>
-<head>
-
-</head>
-<body>
-
 <?php
 
 include 'esencial.php';
@@ -55,6 +49,3 @@ echo "</table>";
 
 
 ?>
-
-</body>
-</html>
