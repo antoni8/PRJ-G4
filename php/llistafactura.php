@@ -11,6 +11,7 @@ echo "<html>
 <meta charset='utf-8'/>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
 <title>A&sup2; - Benviguts a la nostra aplicació</title>
+<link rel='shortcut icon' href='../fotos/logo.png'>
 <link rel='stylesheet' type='text/css' href='../css/selectfactura.css'/>
 </head>
 <body>";

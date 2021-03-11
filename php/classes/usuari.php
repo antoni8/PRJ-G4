@@ -89,6 +89,12 @@ class Usuari extends DB{
     }
   }
 
+  public function llistar(){
+    $llistar = "select * from usuari where Rol != 'Administrador' or Rol is null";
+    $llistar = $this->db->query($llistar);
+    return $llistar;
+  }
+
 }
 
  ?>

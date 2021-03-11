@@ -37,7 +37,6 @@ class Producte extends DB{
     public function getNom($id){
         $llista = "select Nom from producte where ID=$id";
         $resultat = $this->db->query($llista);
-        //$resultat = $resultat->fetch_assoc();
         return $resultat;
     }
 }

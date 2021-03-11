@@ -4,6 +4,7 @@ include "php/perfil.php";
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="fotos/logo.png">
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>A&sup2; - Benviguts a la nostra aplicació</title>
@@ -22,7 +23,7 @@ include "php/perfil.php";
 		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
 		<li class="nav-about-us" role="presentation"><a href="php/facturaprincipal.php">Almacén</a></li>
 		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#administrar.php">Administrar usuaris</a></li>
+		<li class="nav-author-page" role="presentation"><a href="#administrar">Administrar usuaris</a></li>
 		<span class="socialheader">
 		<a href="#registrar"><span class='symbol'>Registrar</span></a>
 		<a href="#login"><span class='symbol'>Login</span></a>
@@ -345,15 +346,55 @@ include "php/perfil.php";
    <div class='modal-dialog'>
     <div class='modal-content'>
       <header class='container'>
-        <a href='index.php' class='closebtn'>x</a>
-        <h1><?php echo $info['Nom'];?></h1>
-        <h4><p><?php echo $info['NomE'];?></p></h4>
+        <h4>Administrar usuaris</h4>
       </header>
       <div class='container'>
-	<p>DNI: <?php echo $info['DNI'];?></p>
-	<p>Correu electrònic: <?php echo $info['Correu'];?></p>
-	<p>Rol: <?php echo $info['Rol'];?></p>
-	<a href='php/canviarcontrasenya.php'>Canvia la contrasenya</a>
+		<?php
+			if (isset($_SESSION['id']) == true) {
+				$usuaris = new Usuari();
+				$usuaris = $usuaris->llistar();
+
+				echo "<table>";
+				echo "<tr><th>DNI</th><th>Nom</th><th>Correu</th><th>Rol actual</th><th>Nou rol</th></tr>";
+
+				foreach ($usuaris as $usuari) {
+					echo "<tr>";
+
+					echo "<td>";
+					echo $usuari['DNI'];
+					echo "</td>";
+
+					echo "<td>";
+					echo $usuari['Nom'];
+					echo "</td>";
+
+					echo "<td>";
+					echo $usuari['Correu'];
+					echo "</td>";
+
+					echo "<td>";
+					echo $usuari['Rol'];
+					echo "</td>";
+
+					echo "<td>";
+					echo "<form action='canviarRol.php?' method='get'>";
+					echo "<select name='rol' id='rol'>";
+					echo "<option value='admin'>Administrador</option>";
+					echo "<option value='editor'>Editor</option>";
+					echo "<option value='lector'>Lector</option>";
+					echo "</select>";
+					echo "<input type='submit' value='Canvia el rol' style='color:black;'>";
+					echo "</form>";
+					echo "</td>";
+
+					echo "</tr>";
+				}
+
+				echo "</table>";
+			} else {
+				echo "No té permisos o no està registrat";
+			}
+		?>
       </div>
       <footer class='container'>
 	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>

@@ -1,8 +1,7 @@
 <?php
-/* error_reporting(0); */
-
-include 'classes/usuari.php';
+error_reporting(0);
 include 'esencial.php';
+include 'classes/usuari.php';
 
 if (isset($_GET)) {
   $comprovar = new Usuari();
@@ -22,6 +21,7 @@ if (isset($_POST)) {
 echo "<html>
 <head>
 <title>A&sup2; - Canviar contrasenya</title>
+<link rel='shortcut icon' href='../fotos/logo.png'>
 <link rel='stylesheet' type='text/css' href='css/canvicontra.css'/>
 </head>
 <body>";
