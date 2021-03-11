@@ -20,9 +20,10 @@ error_reporting(0);
 	<ul id="menu">
   <li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
 		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
-		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Almacén</a></li>
-		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
+    <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
+		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
+		<li class="nav-author-page" role="presentation"><a href="#perfil">Perfil</a></li>
 		<span class="socialheader">
 		<a href="#registrar"><span class='symbol'>Registrar</span></a>
 		<a href="#login"><span class='symbol'>Login</span></a>
