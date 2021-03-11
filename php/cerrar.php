@@ -2,7 +2,7 @@
 
 session_start();
 
-$_SESSION = null;
+$_SESSION['login'] = null;
 
 header("Location: ../index.php");
 

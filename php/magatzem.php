@@ -20,10 +20,10 @@ include "perfil.php";
 	<nav class="main-nav overlay clearfix">
 	<a class="blog-logo" href="../index.php" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
 	<ul id="menu">
-  <li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
+  <li class="nav-about-us" role="presentation"><a href="../index.php">Inici</a></li>
 		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
     <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
-		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
+		<li class="nav-home nav-current" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
 			<?php if ($_SESSION['login']==true){
@@ -114,14 +114,14 @@ foreach ($productes as $individual) {
 	<div class="clearfix">
 	</div>
 	<aside class="read-next">
-	<a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="factura.php">
+	<a class="read-next-story " style="background-image: url(../foto/flechae.png)" href="factura.php">
 	<section class="post">
-	<h2>Factures</h2>
+	<h2>FACTURES</h2>
 	</section>
 	</a>
-	<a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="administrar.php">
+	<a class="read-next-story prev " style="background-image: url(../foto/flechad.png)" href="administrar.php">
 	<section class="post">
-	<h2>Administració de usuaris</h2>
+	<h2>ADMINISTRACIÓ D'USUARIS</h2>
 	</section>
 	</a>
 	</aside>
@@ -179,34 +179,9 @@ foreach ($productes as $individual) {
           Introdueix el teu correu electrònic:
           <input type='email' name='correu'><br>
           Introdueix la teva contrasenya:
-          <input type='password' name='contrasenya'><br>
-	  <a href='#rempwd'>Recordar contrasenya</a>
-          <a href='#registrar'>Registrar-se</a>
-      </div><div id='rempwd' class='rempwd'>
-  <div class='modal-dialog'>
-    <div class='modal-content'>
-    <header class='container'>
-      <a href='magatzem.php' class='closebtn'>x</a>
-      <h2>LOGIN</h2>
-    </header>
-      <div class='container'>
-        <form action='' method='get'>";
-          <input type='password' name='password'><input type='submit' value='VERIFICA'></form>";
-          <?php if (isset($_GET["password"])&(($comprovar->comprovarContra($dni2,$contrasenya2) == true))){
-                echo "<form action='' method='post'>";
-                echo "Indica la nova contrasenya:\n<input type='password' name='contranovao'><br>";
-                echo "Verifica la nova contraseya:\n<input type='password' name='contranovar'><br>";
-                echo "<input type='submit' value='CANVIA'>";
-          }?>
-        </form>
+          <input type='password' name='contrasenya'>
+          <h6><a href='#registrar' style="text-decoration: none;">Registrar-se</a></h6>
       </div>
-      <footer class='container'>
-        <input type='submit' value='ENTRA'>
-      </footer>
-      </form>
-    </div>
-  </div>
-</div>
       <footer class='container'>
         <input type='submit' value='ENTRA'>
       </footer>

@@ -20,9 +20,9 @@ include "perfil.php";
 	<nav class="main-nav overlay clearfix">
 	<a class="blog-logo" href="../index.php" style="height:64px;width:100px;"><img src="../fotos/logo.png"/></a>
 	<ul id="menu">
-  <li class="nav-home nav-current" role="presentation"><a href="../index.php">Inici</a></li>
+  <li class="nav-about-us" role="presentation"><a href="../index.php">Inici</a></li>
 		<!--<li class="nav-article-example" role="presentation"><a href="php/facturaprincipal.php">Factura</a></li>-->
-    <li class="nav-about-us" role="presentation"><a href="factura.php">Factures</a></li>
+    <li class="av-home nav-current" role="presentation"><a href="factura.php">Factures</a></li>
 		<li class="nav-about-us" role="presentation"><a href="magatzem.php">Magatzem</a></li>
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
@@ -118,7 +118,6 @@ if ($_SESSION['rol'] == 'Administrador' or $_SESSION['rol'] == 'Lector' or $_SES
           }
 
           echo "</tr>";
-
           
       }
 
@@ -144,14 +143,14 @@ if ($_SESSION['rol'] == 'Administrador' or $_SESSION['rol'] == 'Lector' or $_SES
 	<div class="clearfix">
 	</div>
 	<aside class="read-next">
-	<a class="read-next-story " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j6-520x779-520x600.jpg)" href="factura.php">
+	<a class="read-next-story " style="background-image: url(../foto/flechae.png)" href="../index.php">
 	<section class="post">
-	<h2>Factures</h2>
+	<img src="../fotos/logo.png"/>
 	</section>
 	</a>
-	<a class="read-next-story prev " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j7-520x780-520x600.jpg)" href="administrar.php">
+	<a class="read-next-story prev " style="background-image: url(../foto/flechad.png)" href="magatzem.php">
 	<section class="post">
-	<h2>Administració de usuaris</h2>
+	<h2>MAGATZEM</h2>
 	</section>
 	</a>
 	</aside>
@@ -210,9 +209,8 @@ if ($_SESSION['rol'] == 'Administrador' or $_SESSION['rol'] == 'Lector' or $_SES
           Introdueix el teu correu electrònic:
           <input type='email' name='correu'><br>
           Introdueix la teva contrasenya:
-          <input type='password' name='contrasenya'><br>
-	  <a href='#rempwd'>Recordar contrasenya</a>
-          <a href='#registrar'>Registrar-se</a>
+          <input type='password' name='contrasenya'>
+          <h6><a href='#registrar'>Registrar-se</a></h6>
       </div>
       <footer class='container'>
         <input type='submit' value='ENTRA'>
