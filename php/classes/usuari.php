@@ -95,6 +95,11 @@ class Usuari extends DB{
     return $llistar;
   }
 
+  public function canviarRol($dni,$rol){
+    $canviar = "update usuari set Rol = '$rol' where DNI='$dni'";
+    $canviar = $this->db->query($canviar);
+  }
+
 }
 
  ?>
