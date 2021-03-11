@@ -184,11 +184,8 @@ input[type=submit] {
 	border: 1px solid #ddd;
 	padding: 8px;
   }
-.customers tr {
-	background-color: white;
-  }
-.customers tr:nth-child(even){background-color: darkslategrey; color: white;}
-.customers tr:hover {background-color: darkgrey;color: hotpink;}
+.customers tr:nth-child(even){background-color: darkgrey; color: white;}
+.customers tr:hover {background-color: rgb(82, 0, 0);color: limegreen;}
 .customers th {
 	background: #177a1a;
 	padding-top: 12px;
