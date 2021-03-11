@@ -12,7 +12,7 @@ if ($_GET) {
     if ($login == 0) {
         header("Location: error.php?error=correu");
     } elseif ($login == 2) {
-        header("Location: error.php?error=contra");
+        header("Location: error.php?error2=contra");
     } else {
         header("Location: ../index.php#perfil");
     }
