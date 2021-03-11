@@ -27,7 +27,7 @@ include "perfil.php";
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
 			<?php if ($_SESSION['login']==true){
-		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#perfil'><span class='symbol'>".$_SESSION['nom']."</span></a>";}else {
 		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
 		echo "<a href='#login'><span class='symbol'>Login</span></a>";
 		}?>
@@ -104,7 +104,7 @@ foreach ($productes as $individual) {
     }
     echo "</tr>";
 }?>
-    <tr><td style="colspan:6;text-align:center;"><a href="#intropro" style="text-decoration:none;">INTRODUEIX UN PRODUCTE</a></td></tr>
+    <tr><?php if ($_SESSION['rol']=="Editor"||$_SESSION['rol']=="Administrador") {echo "<td style='colspan:6;text-align:center;'><a href='#intropro' style='text-decoration:none;'>INTRODUEIX UN PRODUCTE</a></td>";}?></tr>
     </table>
     </p>
 		</section>
@@ -148,7 +148,7 @@ foreach ($productes as $individual) {
       <div class="container">
         <form action="registrar.php" method="get">
         Introdueix el teu correu electronic:
-        <input type="email" name="correu"><br>
+        <input type="email" name="correu" aria-label="Correu electrònic"><br>
 	       Introdueix el teu nom d'usuari:
           <input type="text" name="nom"><br>
 	       Introdueix el teu DNI:
@@ -220,15 +220,15 @@ foreach ($productes as $individual) {
       <div class='container'>
         <form action='afegirProducte.php' method='get'>
         Introdueix el nom:
-        <input type='text' name='nom'><br>
+        <input type='text' name='nom' required><br>
         Introdueix l'Stock:
-        <input type='text' name='stock'><br>
+        <input type='text' name='stock' required><br>
         Introdueix el preu:
-        <input type='text' name='preu'><br>
+        <input type='text' name='preu' required><br>
         Introdueix el descompte:
-        <input type='text' name='descompte'><br>
+        <input type='text' name='descompte' required><br>
         Introdueix l'IVA:
-        <input type='text' name='iva'><br>
+        <input type='text' name='iva' required><br>
       </div>
       <footer class='container'>
         <input type='submit' value='Afegeix el producte'>

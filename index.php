@@ -28,7 +28,7 @@ include "php/perfil.php";
 		<span class="socialheader">
 			<?php 
 			if ($_SESSION['login']==true){
-				echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";
+				echo "<a href='#perfil'><span class='symbol'>".$_SESSION['nom']."</span></a>";
 			} else {
 				echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
 				echo "<a href='#login'><span class='symbol'>Login</span></a>";
@@ -74,11 +74,11 @@ include "php/perfil.php";
 				<article class="post">
 				<div class="wrapgriditem">
 					<header class="post-header">
-					<h2 class="post-title"><a href="article.html">ANTONI (APACHE)</a></h2>
+					<h2 class="post-title"><a href="article.html">ANA I VIOLETA</a></h2>
 					</header>
 					<section class="post-excerpt">
 					<p>
-						Alies 'ENCEN S'APACHE!!!'
+						PORFI, APROVA 🥺
 					</p>
 				</div>
 				</article>
@@ -87,11 +87,11 @@ include "php/perfil.php";
 				<article class="post">
 				<div class="wrapgriditem">
 					<header class="post-header">
-					<h2 class="post-title"><a href="article.html">ANA I VIOLETA</a></h2>
+					<h2 class="post-title"><a href="article.html">ANTONI (APACHE)</a></h2>
 					</header>
 					<section class="post-excerpt">
 					<p>
-						PORFI, APROVA 🥺
+						Alies 'ENCEN S'APACHE!!!' entre molts altres fallos petits però alhora importants, com posar ; a final dels echo.
 					</p>
 				</div>
 				</article>

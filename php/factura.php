@@ -27,7 +27,7 @@ include "perfil.php";
 		<li class="nav-author-page" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
 			<?php if ($_SESSION['login']==true){
-		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#perfil'><span class='symbol'>".$_SESSION['nom']."</span></a>";}else {
 		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
 		echo "<a href='#login'><span class='symbol'>Login</span></a>";
 		}?>
@@ -123,7 +123,7 @@ if ($_SESSION['rol'] == 'Administrador' or $_SESSION['rol'] == 'Lector' or $_SES
 
       echo "</table>";
 } else {
-  echo "Has d'estar registrat per poder veure les factures";
+  echo "<h4 style='text-align:center;'>Has d'estar registrat per poder veure les factures</h4>";
 }
 ?>
     </table>

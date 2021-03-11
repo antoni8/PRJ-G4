@@ -27,7 +27,7 @@ include "perfil.php";
 		<li class="nav-home nav-current" role="presentation"><a href="administrar.php">Administrar usuaris</a></li>
 		<span class="socialheader">
 			<?php if ($_SESSION['login']==true){
-		echo "<a href='#perfil'><span class='symbol'>Perfil</span></a>";}else {
+		echo "<a href='#perfil'><span class='symbol'>".$_SESSION['nom']."</span></a>";}else {
 		echo "<a href='#registrar'><span class='symbol'>Registrar</span></a>";
 		echo "<a href='#login'><span class='symbol'>Login</span></a>";
 		}?>
@@ -219,7 +219,7 @@ include "perfil.php";
 	<a href='canviarcontrasenya.php'>Canvia la contrasenya</a>
       </div>
       <footer class='container'>
-	<button><a href='php/cerrar.php'>TANCA SESSIÓ</a></button>
+	<button><a href='cerrar.php'>TANCA SESSIÓ</a></button>
       </footer>
     </div>
   </div>
